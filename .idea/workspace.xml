@@ -10,68 +10,75 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08d29141-7143-4bb3-b7b5-16901ce62cbc" name="Changes" comment="Project Structure +working servlet and DB's lets get to implementing the function :)">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_19_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_servlet_jakarta_servlet_api_5_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOEN387.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/BusinessLogic.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/Courses.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/CoursesMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/DBConnection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/Enrollment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/EnrollmentMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/Person.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/PersonMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/a2/soen387/HelloServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/a2/soen387/LoginServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/com/example/soen387/HelloServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-8.0.30.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/lib/protobuf-java-3.19.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/adminsite.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/courseattendance.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/iframedefault.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/index2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/newcourse.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/newemployee.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/newstudent.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/registrationform.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/formsstyles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newcourse.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newemployee.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newstudent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/studentsite.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Classes/Courses.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Classes/CoursesMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Classes/DBConnection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Classes/Enrollment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Classes/EnrollmentMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Classes/Person.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Classes/PersonMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/a2/soen387/HelloServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/a2/soen387/LoginServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SOEN387_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SOEN387_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-java-8.0.30.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-java-8.0.301.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/protobuf-java-3.19.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/protobuf-java-3.19.41.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Classes/Courses.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Classes/CoursesMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Classes/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Classes/Enrollment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Classes/EnrollmentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Classes/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Classes/PersonMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/BusinessLogic.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminsite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/courseattendance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/iframedefault.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/newcourse.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/newemployee.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/newstudent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/registrationform.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/settings/formsstyles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/settings/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/settings/newcourse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/settings/newemployee.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/settings/newstudent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/settings/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/settings/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/studentsite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/Courses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/CoursesMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/DBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/Enrollment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/EnrollmentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/Classes/PersonMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/a2/soen387/HelloServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/a2/soen387/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/classes/com/example/soen387/HelloServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-8.0.30.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-8.0.30.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/lib/protobuf-java-3.19.4.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/WEB-INF/lib/protobuf-java-3.19.4.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Courses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Classes/CoursesMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Classes/DBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Enrollment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Classes/EnrollmentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Classes/PersonMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/a2/soen387/HelloServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/a2/soen387/LoginServlet.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +93,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="25e319de4a4519aa28aa7e92df84650eaccf00fb" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
   </component>
@@ -187,7 +199,7 @@
       <option name="presentableId" value="Default" />
       <updated>1668466342435</updated>
       <workItem from="1668466343768" duration="391000" />
-      <workItem from="1668466744546" duration="2742000" />
+      <workItem from="1668466744546" duration="3435000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure +working servlet and DB's lets get to implementing the function :)">
       <created>1668469319884</created>
@@ -196,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668469319885</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Project Structure +working servlet and DB's lets get to implementing the function :)">
+      <created>1668469657351</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668469657351</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
