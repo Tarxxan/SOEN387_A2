@@ -28,7 +28,7 @@
     <a href="adminsite.jsp">Reports</a>
     <a href="newemployee.jsp">New employee</a>
     <a class="active" href="newstudent.jsp">New student</a>
-    <a href="newcourse.html">New course</a>
+    <a href="newcourse.jsp">New course</a>
   </div>
 
   <div class="content-wrapper w-container ">

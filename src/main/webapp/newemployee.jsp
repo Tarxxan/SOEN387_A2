@@ -25,7 +25,7 @@
     </div>
     <div class="navbar">
         <a class="right" href="index.jsp" >Logout</a>
-        <a href="adminsite.php">Reports</a>
+        <a href="adminsite.jsp">Reports</a>
         <a class="active" href="newemployee.jsp">New employee</a>
         <a href="newstudent.jsp">New student</a>
         <a href="newcourse.html">New course</a>

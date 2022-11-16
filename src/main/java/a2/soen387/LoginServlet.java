@@ -32,7 +32,6 @@ public class LoginServlet extends HttpServlet {
         session.setAttribute("id",person.getPersonalID());
         PersonMapper pm = new PersonMapper();
         try {
-
             ResultSet rs =pm.findById(person);
             while(rs.next()){
                 String id=Integer.toString(rs.getInt("personalId"));
