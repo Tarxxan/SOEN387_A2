@@ -4,12 +4,14 @@ import java.sql.Date;
 
 public class Person {
 
+    private boolean isStudent;
     private int personalID;
     
     private String firstName;
     
     private String lastName;
-    
+
+    private String appartmentNumber;
     private String email;
     
     private String phoneNumber;
@@ -22,7 +24,8 @@ public class Person {
     private String city;
     private int streetNumber;
 
-    public Person(int personalID, String firstName, String lastName, String email, String phoneNumber, Date dateOfBirth, String streetName, String country, String postalCode, String city, int streetNumber) {
+    // add apt number
+    public Person(int personalID, String firstName, String lastName, String email, String phoneNumber, Date dateOfBirth, String streetName,String appartmentNumber, String country, String postalCode, String city, int streetNumber) {
         this.personalID = personalID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,13 +33,23 @@ public class Person {
         this.phoneNumber = phoneNumber;
         this.dateOfBirth = dateOfBirth;
         this.streetName = streetName;
+        this.appartmentNumber=appartmentNumber;
         this.country = country;
         this.postalCode = postalCode;
         this.city = city;
         this.streetNumber = streetNumber;
+        this.isStudent=true;
     }
 
     public Person(){}
+
+    public String getAppartmentNumber() {
+        return appartmentNumber;
+    }
+
+    public void setAppartmentNumber(String appartmentNumber) {
+        this.appartmentNumber = appartmentNumber;
+    }
     public int getPersonalID() {
         return personalID;
     }
@@ -44,7 +57,6 @@ public class Person {
     public void setPersonalID(int personalID) {
         this.personalID = personalID;
     }
-
     public String getFirstName() {
         return firstName;
     }
@@ -123,5 +135,13 @@ public class Person {
 
     public void setStreetNumber(int streetNumber) {
         this.streetNumber = streetNumber;
+    }
+
+    public boolean getIsStudent() {
+        return isStudent;
+    }
+
+    public void setIsStudent(boolean isStudent) {
+        this.isStudent = isStudent;
     }
 }

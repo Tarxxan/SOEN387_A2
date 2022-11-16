@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: christian.henneveld
+  Date: 2022-11-15
+  Time: 8:06 p.m.
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
@@ -18,8 +26,8 @@
     <div class="navbar">
         <a class="right" href="index.jsp" >Logout</a>
         <a href="adminsite.php">Reports</a>
-        <a class="active" href="newemployee.html">New employee</a>
-        <a href="newstudent.html">New student</a>
+        <a class="active" href="newemployee.jsp">New employee</a>
+        <a href="newstudent.jsp">New student</a>
         <a href="newcourse.html">New course</a>
     </div>
 
@@ -27,7 +35,7 @@
     <div class="content-wrapper w-container ">
 
 
-        <form novalidate action="BusinessLogic.php" onsubmit="return validateneformForm()" name="neform" method="post" target="_self">
+        <form novalidate action="/NewEmployeeServlet" onsubmit="return validateneformForm()" name="neform" method="post" target="_self">
             <div class="row card">
                 <div class="column">
 
@@ -41,7 +49,7 @@
 
                     <div class="form-group">
                         <input class="form-control" name="neestreetnumber"
-                               placeholder="Street number" 
+                               placeholder="Street number"
                                type="text">
                     </div>
                     <div class="form-group">
@@ -75,16 +83,16 @@
                     <div class="form-group">
                         <input class="form-control" name="nephone"
                                placeholder="Phone number"
-                                type="tel">
+                               type="tel">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" name="nedateofbirth" placeholder="Date of birth" 
+                        <input class="form-control" name="nedateofbirth" placeholder="Date of birth"
                                type="date">
                     </div>
                     <div class="form-group">
                         <input class="form-control" name="nepassword"
                                placeholder="Password"
-                               
+
                                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                type="password">
                     </div>
@@ -92,7 +100,7 @@
                         <input class="form-control" name="neconfirmpassword"
 
                                placeholder="confirm-password"
-                               
+
                                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                type="password">
 

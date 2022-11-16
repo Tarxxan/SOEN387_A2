@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 public class PersonMapper {
 
+
     // ADD extra when we know what db looks like/ View
 private final String insertSQL ="INSERT INTO railway.person(personalID,firstName,lastName,email,phoneNumber,dateOfBirth,streetName,streetNumber,city,country,postalCode)" +
         "        VALUES(?,?,?,?,?,?,?,?,?,?,?)";
@@ -14,23 +15,53 @@ private final String insertSQL ="INSERT INTO railway.person(personalID,firstName
 
 
     public ResultSet findById(Person person) throws SQLException {
+        String query;
         Connection conn = DBConnection.getConnection();
-        String query="SELECT * FROM railway.person where personalID=?";
-        PreparedStatement stmt = conn.prepareStatement(query);
+        // Change to the student view
+        if (person.getIsStudent()){
+            query="SELECT * FROM railway.person where personalID=?";
+        }
+        //change to the admin view
+        else
+        {
+            query="SELECT * FROM railway.person where personalID=?";
+        }
 
+        PreparedStatement stmt = conn.prepareStatement(query);
         stmt.setInt(1,person.getPersonalID());
 
         ResultSet rs= stmt.executeQuery();
 
-        while(rs.next()) {
-            System.out.print("First Name: "+rs.getString("firstName")+", ");
-            System.out.print("Last Name: "+rs.getString("lastName")+", ");
-            System.out.print("Date of Birth: "+rs.getDate("dateOfBirth"));
-            System.out.println();
-        }
-
         return rs;}
 
-    public int insert(){return 1;}
+    public void createNewStudent(Person p) throws SQLException {
+        Connection conn = DBConnection.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(insertSQL);
+        stmt=this.setStmt(stmt,p);
+        stmt.executeUpdate();
 
+        }
+
+    public void createNewEmployee(Person p) throws SQLException {
+            Connection conn = DBConnection.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(insertSQL);
+            stmt=this.setStmt(stmt,p);
+            stmt.executeUpdate();
+        }
+
+    private PreparedStatement setStmt(PreparedStatement stmt, Person p) throws SQLException {
+        stmt.setInt(1,p.getPersonalID());
+        stmt.setString(2,p.getFirstName());
+        stmt.setString(3,p.getLastName());
+        stmt.setString(4,p.getEmail());
+        stmt.setString(5,p.getPhoneNumber());
+        stmt.setDate(6,p.getDateOfBirth());
+        stmt.setString(7,p.getStreetName());
+        stmt.setInt(8,p.getStreetNumber());
+        stmt.setString(9,p.getCity());
+        stmt.setString(10,p.getCountry());
+        stmt.setString(11,p.getPostalCode());
+
+        return stmt;
+    }
 }

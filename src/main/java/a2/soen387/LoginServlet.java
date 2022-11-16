@@ -19,13 +19,41 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Person person = new Person(); person.setPersonalID(12345678);
-        System.out.println("worked");
+        Person person = new Person();
+
+        if(request.getParameter("studentid")!=null){
+            person.setPersonalID(Integer.parseInt(request.getParameter("studentid")));
+        }
+        else if ((request.getParameter("employeeid")!=null)) {
+            person.setPersonalID(Integer.parseInt(request.getParameter("employeeid")));
+        }
+
+        HttpSession session = request.getSession();
+        session.setAttribute("id",person.getPersonalID());
         PersonMapper pm = new PersonMapper();
         try {
+
             ResultSet rs =pm.findById(person);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            while(rs.next()){
+                String id=Integer.toString(rs.getInt("personalId"));
+                if(0==Character.compare('1',id.charAt(0))) {
+                    person.setIsStudent(true);
+                } else {
+                    person.setIsStudent(false);
+                }
+            }
+            } catch (SQLException ex) {
+            throw new RuntimeException(ex);
         }
+
+        if (person.getIsStudent()){
+            response.sendRedirect(request.getContextPath()+"/registrationform.jsp");
+        }
+        else {
+            response.sendRedirect(request.getContextPath()+"/adminsite.jsp");
+        }
+
+
+
     }
 }
