@@ -45,6 +45,9 @@ public class NewCourseServlet extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        finally{
+            response.sendRedirect(request.getContextPath()+"/adminsite.jsp");
+        }
     }
 }
 
