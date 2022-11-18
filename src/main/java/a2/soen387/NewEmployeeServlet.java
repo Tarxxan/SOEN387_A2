@@ -21,15 +21,15 @@ public class NewEmployeeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Person person = new Person();
         // AUTO INCREMENT ??
-        person.setPersonalID(Integer.parseInt("99999998"));
-        person.setFirstName(request.getParameter("nename"));
+       person.setFirstName(request.getParameter("nename"));
         person.setLastName(request.getParameter("nelastname"));
         person.setPhoneNumber(request.getParameter("nephone"));
         person.setEmail(request.getParameter("nemail"));
         person.setDateOfBirth(Date.valueOf(request.getParameter("nedateofbirth")));
         person.setStreetName(request.getParameter("nestreetname"));
-        person.setStreetNumber(Integer.parseInt(request.getParameter("neestreetnumber")));
+        person.setStreetNumber(request.getParameter("neestreetnumber"));
         person.setCity(request.getParameter("necity"));
+        person.setCountry(request.getParameter("necountry"));
         person.setCountry(request.getParameter("necountry"));
         person.setPostalCode(request.getParameter("nepostalcode"));
         //person.setStreetNumber(request.getParameter(""));

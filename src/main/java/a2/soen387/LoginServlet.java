@@ -7,6 +7,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -22,11 +23,10 @@ public class LoginServlet extends HttpServlet {
         Person person = new Person();
 
         if(request.getParameter("studentid")!=null){
-            person.setPersonalID(Integer.parseInt(request.getParameter("studentid")));
+            person.setPersonalID(BigDecimal.valueOf(Long.parseLong(request.getParameter("studentid"))));
         }
-        else if ((request.getParameter("employeeid")!=null)) {
-            person.setPersonalID(Integer.parseInt(request.getParameter("employeeid")));
-        }
+        else if ((request.getParameter("employeeid")!=null))
+            person.setPersonalID(BigDecimal.valueOf(Long.parseLong("employeeid")));
 
         HttpSession session = request.getSession();
         session.setAttribute("id",person.getPersonalID());

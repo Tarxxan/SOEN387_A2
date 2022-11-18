@@ -31,7 +31,8 @@
       <div class="column ">
         <form method="POST" action="/adminServlet" target="myIframeAdmin">
           <div class="form-group">
-            <label for="courses" >Course&nbsp;participants</label>
+
+            <label for="addCourse" >Course&nbsp;participants</label>
             <select id="addCourse" name="courseToDisplay">
 
               // REPLACE WITH JSP
@@ -46,14 +47,14 @@
       <div class="column ">
         <form method="POST" action="BusinessLogic.php" target="myIframeAdmin">
           <div class="form-group">
-            <label for="courses">Student&nbsp;course&nbsp;load</label>
+            <label for="studentCourse">Student&nbsp;course&nbsp;load</label>
             <select id="studentCourse" name="studentCourse">
               <?php
                         $b->displayStudentDropdown();
               ?>
             </select>
           </div>
-          <input type="submit" name="rcsubmit" value="Classes.Courses taken by student"/>
+          <input type="submit" name="rcsubmit" value="Courses taken by student"/>
         </form>
       </div>
 
@@ -61,7 +62,7 @@
     <div class="row">
       <iframe loading="lazy" name="myIframeAdmin"
               title="Report display window"
-              width="100%" src="iframedefault.html">
+              width="100%" src="iframedefaut.html">
       </iframe>
     </div>
   </div>

@@ -20,19 +20,23 @@ public class NewStudentServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Person person = new Person();
-        // AUTO INCREMENT ??
-        person.setPersonalID(Integer.parseInt("99999998"));
+
+
+        person.setPassword((request.getParameter("nspassword")));
+
         person.setFirstName(request.getParameter("nsname"));
         person.setLastName(request.getParameter("nslastname"));
-        person.setPhoneNumber(request.getParameter("nsphone"));
         person.setEmail(request.getParameter("nsemail"));
-        person.setDateOfBirth(Date.valueOf(request.getParameter("nsdateofbirth")));
+        person.setPhoneNumber(request.getParameter("nsphone"));
+        person.setPostalCode(request.getParameter("nsdateofbirth"));
         person.setStreetName(request.getParameter("nsstreetname"));
-        person.setStreetNumber(Integer.parseInt(request.getParameter("nsestreetnumber")));
-        person.setCity(request.getParameter("nscity"));
+        person.setAppartmentNumber(request.getParameter("nsappartmentnumber"));
         person.setCountry(request.getParameter("nscountry"));
         person.setPostalCode(request.getParameter("nspostalcode"));
-        //person.setStreetNumber(request.getParameter(""));
+        person.setCity(request.getParameter("nscity"));
+        person.setStreetNumber(request.getParameter("nsestreetnumber"));
+        person.setIsStudent(true);
+
 
         PersonMapper pm = new PersonMapper();
         try {
@@ -41,7 +45,7 @@ public class NewStudentServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-        response.sendRedirect(request.getContextPath()+"/newstudent.jsp");
+        response.sendRedirect(request.getContextPath() + "/newstudent.jsp");
         //check success
     }
 }

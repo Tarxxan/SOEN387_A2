@@ -7,9 +7,9 @@ import java.sql.SQLException;
 public class DBConnection {
 
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://containers-us-west-100.railway.app:6568/railway";
+    static final String DB_URL = "mysql://root:pGbD1yZXthDKdEibWtM1@containers-us-west-123.railway.app:5598/railway";
     static final String DB_USER = "root";
-    static final String DB_PASSWORD = "R7z7HwpuHJMDlpKXrBO9";
+    static final String DB_PASSWORD = "pGbD1yZXthDKdEibWtM1";
     static Connection conn = null;
 
     public DBConnection() {
@@ -35,4 +35,3 @@ public class DBConnection {
         if(conn!=null) conn.close();
     }
 }
-

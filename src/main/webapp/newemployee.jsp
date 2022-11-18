@@ -36,13 +36,16 @@
 
 
         <form novalidate action="/NewEmployeeServlet" onsubmit="return validateneformForm()" name="neform" method="post" target="_self">
+
             <div class="row card">
+
                 <div class="column">
 
                     <div class="form-group">
 
                         <input class="form-control" name="nename" placeholder="Name"  type="text">
                     </div>
+
                     <div class="form-group">
                         <input class="form-control" name="nelastname" placeholder="Last Name"  type="text">
                     </div>
@@ -52,12 +55,15 @@
                                placeholder="Street number"
                                type="text">
                     </div>
+
                     <div class="form-group">
                         <input class="form-control" name="nestreetname" placeholder="Street name"  type="text">
                     </div>
+
                     <div class="form-group">
                         <input class="form-control" name="necity" placeholder="City"  type="text">
                     </div>
+
                     <div class="form-group">
                         <input class="form-control" name="neprovince" placeholder="Province"  type="text">
                     </div>
@@ -66,29 +72,33 @@
                         <input class="form-control" name="necountry" placeholder="Country"
                                type="text">
 
-                    </div>
-
-                    <button class="btn center-box" onclick="window.location.href='adminsite.html';">Cancel
-                    </button>
-                </div>
-
                 <div class="column">
                     <div class="form-group">
                         <input class="form-control" name="nepostalcode"
                                placeholder="Postal Code"  type="text">
                     </div>
+
+                    </div>
+
+                    <button class="btn center-box" onclick="window.location.href='adminsite.jsp';">Cancel
+                    </button>
+                </div>
+
                     <div class="form-group">
                         <input class="form-control" name="neemail" placeholder="Email"  type="email">
                     </div>
+
                     <div class="form-group">
                         <input class="form-control" name="nephone"
                                placeholder="Phone number"
                                type="tel">
                     </div>
+
                     <div class="form-group">
                         <input class="form-control" name="nedateofbirth" placeholder="Date of birth"
                                type="date">
                     </div>
+
                     <div class="form-group">
                         <input class="form-control" name="nepassword"
                                placeholder="Password"
@@ -97,6 +107,7 @@
                                type="password">
                     </div>
                     <div class="form-group">
+
                         <input class="form-control" name="neconfirmpassword"
 
                                placeholder="confirm-password"
@@ -109,7 +120,9 @@
                     <input class="center-box" name="nesubmit" type="submit" value="Save">
 
                 </div>
+
             </div>
+
         </form>
 
         <footer class="footer">

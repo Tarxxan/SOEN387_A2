@@ -1,47 +1,52 @@
 package Classes;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 public class Person {
 
+    private String password;
     private boolean isStudent;
-    private int personalID;
-    
+    private BigDecimal personalID;
     private String firstName;
-    
     private String lastName;
-
     private String appartmentNumber;
     private String email;
-    
     private String phoneNumber;
-    
     private Date dateOfBirth;
-
     private String streetName;
     private String country;
     private String postalCode;
     private String city;
-    private int streetNumber;
+    private String streetNumber;
 
     // add apt number
-    public Person(int personalID, String firstName, String lastName, String email, String phoneNumber, Date dateOfBirth, String streetName,String appartmentNumber, String country, String postalCode, String city, int streetNumber) {
-        this.personalID = personalID;
+    public Person(String password, String firstName, String lastName, String email, String phoneNumber, Date dateOfBirth, String streetName, String appartmentNumber, String country, String postalCode, String city, String streetNumber,  boolean isStudent) {
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.dateOfBirth = dateOfBirth;
         this.streetName = streetName;
-        this.appartmentNumber=appartmentNumber;
+        this.appartmentNumber = appartmentNumber;
         this.country = country;
         this.postalCode = postalCode;
         this.city = city;
         this.streetNumber = streetNumber;
-        this.isStudent=true;
+        this.isStudent = isStudent;
     }
 
-    public Person(){}
+    public Person() {
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getAppartmentNumber() {
         return appartmentNumber;
@@ -50,13 +55,15 @@ public class Person {
     public void setAppartmentNumber(String appartmentNumber) {
         this.appartmentNumber = appartmentNumber;
     }
-    public int getPersonalID() {
+
+    public BigDecimal getPersonalID() {
         return personalID;
     }
 
-    public void setPersonalID(int personalID) {
+    public void setPersonalID(BigDecimal personalID) {
         this.personalID = personalID;
     }
+
     public String getFirstName() {
         return firstName;
     }
@@ -129,11 +136,11 @@ public class Person {
         this.city = city;
     }
 
-    public int getStreetNumber() {
+    public String getStreetNumber() {
         return streetNumber;
     }
 
-    public void setStreetNumber(int streetNumber) {
+    public void setStreetNumber(String streetNumber) {
         this.streetNumber = streetNumber;
     }
 

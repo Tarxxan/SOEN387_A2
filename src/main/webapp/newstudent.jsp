@@ -34,9 +34,11 @@
   <div class="content-wrapper w-container ">
 
     <!--action="BusinessLogic.php"-->
-    <form novalidate name="nsform" onsubmit="return validatensformForm()" method="post" target="_self" action="<%=request.getContextPath()%>/NewStudentServlet">
+    <form action="<%=request.getContextPath()%>/NewStudentServlet" method="post" name="nsform" novalidate onsubmit="return validatensformForm()"
+          target="_self">
       <div class="row card">
         <div class="column">
+
           <div class="form-group">
             <input class="form-control" name="nsname" placeholder="Name"  type="text">
           </div>
@@ -46,6 +48,12 @@
                    type="text">
 
           </div>
+          <div class="form-group">
+
+            <input class="form-control" name="nsdateofbirth" placeholder="Date of birth"
+                   type="date">
+
+          </div>
 
           <div class="form-group">
             <input class="form-control" name="nsestreetnumber"
@@ -53,6 +61,12 @@
                    type="text">
 
           </div>
+              <div class="form-group">
+
+          <input class="form-control" name="nsappartmentnumber" placeholder="Appartment number"
+                 type="text">
+
+        </div>
           <div class="form-group">
             <input class="form-control" name="nsstreetname" placeholder="Street name"
 
@@ -75,7 +89,7 @@
 
           </div>
 
-          <button class="btn center-box" onclick="window.location.href='adminsite.html';">Cancel
+          <button class="btn center-box" onclick="window.location.href='adminsite.jsp';">Cancel
           </button>
 
         </div>
@@ -107,7 +121,6 @@
           <div class="form-group">
             <input class="form-control" name="nspassword"
                    placeholder="Password"
-
                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                    type="password">
 
