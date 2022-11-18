@@ -9,18 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08d29141-7143-4bb3-b7b5-16901ce62cbc" name="Changes" comment="Project Structure +working servlet and DB's lets get to implementing the function :)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/NewCourseServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/newcourse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="08d29141-7143-4bb3-b7b5-16901ce62cbc" name="Changes" comment="Most servlets and functionality implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SOEN387.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SOEN387.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Courses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Courses.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Classes/CoursesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/CoursesMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/NewCourseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/NewCourseServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/adminsite.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminsite.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/newemployee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newemployee.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/newstudent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newstudent.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/newcourse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newcourse.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/registrationform.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registrationform.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,27 +66,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/christian.henneveld/IdeaProjects/Soen387/src/main/java&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/christian.henneveld/IdeaProjects/Soen387/src/main/java",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\christian.henneveld\IdeaProjects\Soen387\src\main\java" />
@@ -114,61 +111,12 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="0f61c5a7-e404-4950-a19a-dd403fec998c" />
-        <option name="DEPLOY_TOMCAT_APPS" value="true" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="54061" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -201,8 +149,7 @@
       <option name="presentableId" value="Default" />
       <updated>1668466342435</updated>
       <workItem from="1668466343768" duration="391000" />
-      <workItem from="1668466744546" duration="23450000" />
-      <workItem from="1668608095032" duration="3230000" />
+      <workItem from="1668466744546" duration="34003000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure +working servlet and DB's lets get to implementing the function :)">
       <created>1668469319884</created>
@@ -225,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668470330708</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Most servlets and functionality implemented">
+      <created>1668561942461</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668561942461</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +198,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project Structure +working servlet and DB's lets get to implementing the function :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project Structure +working servlet and DB's lets get to implementing the function :)" />
+    <MESSAGE value="Most servlets and functionality implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Most servlets and functionality implemented" />
   </component>
 </project>

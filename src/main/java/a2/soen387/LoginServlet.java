@@ -30,10 +30,14 @@ public class LoginServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         session.setAttribute("id",person.getPersonalID());
+
         PersonMapper pm = new PersonMapper();
         try {
             ResultSet rs =pm.findById(person);
             while(rs.next()){
+                String fName= rs.getString("firstName");
+                String lName=rs.getString("lastName");
+                session.setAttribute("name",fName+" "+lName);
                 String id=Integer.toString(rs.getInt("personalId"));
                 if(0==Character.compare('1',id.charAt(0))) {
                     person.setIsStudent(true);

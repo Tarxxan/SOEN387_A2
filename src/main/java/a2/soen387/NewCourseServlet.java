@@ -26,17 +26,19 @@ public class NewCourseServlet extends HttpServlet {
             "window.location.href='newcourse.jsp'</script>");
             response.sendRedirect(request.getContextPath()+"/newcourse.jsp");
         }
-
+        HttpSession session = request.getSession();
         String courseCode = request.getParameter("courseCode");
-        String title =request.getParameter("title");
+        String title =request.getParameter("courseTitle");
         String semester=request.getParameter("semester");
         String days = request.getParameter("days");
+        String instructor=request.getParameter("instructor");
         Time time = Time.valueOf(request.getParameter("time"));
         Date startDate = Date.valueOf(request.getParameter("startDate"));
         Date endDate = Date.valueOf(request.getParameter("endDate"));
-        int createdBy = Integer.parseInt(request.getParameter("createdBy"));
+        String classroom= request.getParameter("room");
+        int createdBy= (int) session.getAttribute("id");
 
-        Courses course = new Courses(courseCode,title,semester,days,time,startDate,endDate,createdBy);
+        Courses course = new Courses(courseCode,title,semester,days,classroom,instructor,time,startDate,endDate,createdBy);
         CoursesMapper cm = new CoursesMapper();
         try {
             cm.addClass(course);

@@ -13,12 +13,12 @@
 <div class="page-container">
   <div class="header">
     <h1>Course enrollment</h1>
-<%--    <h2>  <?php echo $b->createID();?></h2>--%>
+<h2> ${name}</h2>
   </div>
 
   <div class="navbar">
-    <a class="right" href="home.html" >Logout</a>
-    <a class="active" href="registrationform.php">Classes.Enrollment</a>
+    <a class="right" href="index.jsp" >Logout</a>
+    <a class="active" href="registrationform.jsp">Classes.Enrollment</a>
 
   </div>
 

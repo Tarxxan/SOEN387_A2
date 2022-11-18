@@ -39,7 +39,7 @@
 
     <div class="content-wrapper w-container">
 
-        <form action=<%= request.getContextPath() %>"/newCourseServlet" method="post" name="ncform" onsubmit="return validatencformForm()" target="_self">
+        <form action=<%= request.getContextPath() %>/NewCourseServlet method="post" name="ncform" onsubmit="return validatencformForm()" target="_self">
             <div class="row card">
                 <div class="column">
 
