@@ -39,7 +39,7 @@
             <label for="addCourse" >Course&nbsp;participants</label>
             <select id="addCourse" name="courseToDisplay">
               <% DisplayHelper dh= new DisplayHelper((int)session.getAttribute("id"));%>
-                <%= dh.displayAvailableCoursesDropdown()%>
+<%--                <%= dh.displayAvailableCoursesDropdown()%>--%>
               </select>
 
             </select>
