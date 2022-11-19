@@ -6,22 +6,24 @@ public class PersonMapper {
 
 
     public ResultSet validateStudentLogin(Person person) throws SQLException {
-        String query="CALL validateStudentLogin(?,?)";
+        String query="{CALL validateStudentLogin(?,?)}";
         Connection conn = DBConnection.getConnection();
-        PreparedStatement stmt = conn.prepareStatement(query);
+        CallableStatement stmt = conn.prepareCall(query);
         stmt.setInt(1,person.getPersonalID());
         stmt.setString(2, person.getPassword());
-        ResultSet rs= stmt.executeQuery();
-        return rs;}
-    public ResultSet validateEmployeeLogin(Person person) throws SQLException {
-        String query="CALL validateEmployeeLogin(?,?)";
-        Connection conn = DBConnection.getConnection();
-        PreparedStatement stmt = conn.prepareStatement(query);
-        stmt.setInt(1,person.getPersonalID());
-        stmt.setString(2, person.getPassword());
-        ResultSet rs= stmt.executeQuery();
 
-        return rs;}
+        return stmt.executeQuery();
+    }
+
+    public ResultSet validateEmployeeLogin(Person person) throws SQLException {
+        String query="{CALL validateEmployeeLogin(?,?)}";
+        Connection conn = DBConnection.getConnection();
+        CallableStatement stmt = conn.prepareCall(query);
+        stmt.setInt(1,person.getPersonalID());
+        stmt.setString(2, person.getPassword());
+
+        return stmt.executeQuery();
+    }
 
 
 
@@ -33,7 +35,7 @@ public class PersonMapper {
         st.close();
         nextID_student.close();
 
-        PreparedStatement stmt = conn.prepareStatement("CALL createNewStudent(?,?,?,?,?,?,?,?,?,?,?,?)");
+        PreparedStatement stmt = conn.prepareStatement("{CALL createNewStudent(?,?,?,?,?,?,?,?,?,?,?,?)}");
         stmt=this.setStmt(stmt,p);
         stmt.executeUpdate();
         stmt.close();
@@ -48,7 +50,7 @@ public class PersonMapper {
         st.close();
         nextID_employee.close();
 
-            PreparedStatement stmt = conn.prepareStatement("CALL createNewEmployee(?,?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement stmt = conn.prepareStatement("{CALL createNewEmployee(?,?,?,?,?,?,?,?,?,?,?,?)}");
             stmt=this.setStmt(stmt,p);
             stmt.executeUpdate();
         stmt.close();

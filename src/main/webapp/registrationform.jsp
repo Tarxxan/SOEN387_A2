@@ -33,7 +33,7 @@
             <label for="addCourse" class="center-box">Enroll</label>
             <select id="addCourse" name="addCourse">
             <% DisplayHelper dh= new DisplayHelper((int)session.getAttribute("id"));%>
-            <%= dh.displayAvailableCoursesDropdown()%>
+<%--            <%= dh.displayAvailableCoursesDropdown()%>--%>
             </select>
           </div>
 
@@ -46,7 +46,7 @@
           <div class="form-group">
             <label for="dropCourse" class="center-box">Drop</label>
             <select id="dropCourse" name="dropCourse">
-              <%= dh.displayDropableCourses()%>
+<%--              <%= dh.displayDropableCourses()%>--%>
             </select>
           </div>
           <input type="submit" name="sdsubmit" value="Drop Classes.Courses"/>
@@ -54,7 +54,7 @@
       </div>
     </div>
     <div>
-    <%= dh.displayActiveEnrolledCourses()%>
+<%--    <%= dh.displayActiveEnrolledCourses()%>--%>
     </div>
 
   </div>

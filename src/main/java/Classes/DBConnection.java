@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DBConnection {
 
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "mysql://root:pGbD1yZXthDKdEibWtM1@containers-us-west-123.railway.app:5598/railway";
+    static final String DB_URL = "jdbc:mysql://containers-us-west-123.railway.app:5598/railway";
     static final String DB_USER = "root";
     static final String DB_PASSWORD = "pGbD1yZXthDKdEibWtM1";
     static Connection conn = null;
@@ -19,9 +19,7 @@ public class DBConnection {
         try{
             Class.forName(JDBC_DRIVER); //Register JDBC driver
             //Open a connection
-            System.out.println("Connection Attempting");
             conn = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD);
-            System.out.println("Connection Successful");
             return conn;
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to database",e);

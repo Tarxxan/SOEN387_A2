@@ -21,7 +21,6 @@ public class NewStudentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Person person = new Person();
 
-
         person.setPassword((request.getParameter("nspassword")));
         person.setFirstName(request.getParameter("nsname"));
         person.setLastName(request.getParameter("nslastname"));
@@ -35,7 +34,6 @@ public class NewStudentServlet extends HttpServlet {
         person.setCity(request.getParameter("nscity"));
         person.setStreetNumber(request.getParameter("nsestreetnumber"));
         person.setIsStudent(true);
-
 
         PersonMapper pm = new PersonMapper();
         try {

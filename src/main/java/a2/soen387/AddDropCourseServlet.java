@@ -19,7 +19,7 @@ public class AddDropCourseServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Enrollment enrollment = new Enrollment();
-enrollment.setStudentID( Integer.parseInt(request.getRequestedSessionId()));
+        enrollment.setStudentID( Integer.parseInt(request.getRequestedSessionId()));
         enrollment.courseIdentifier(request.getParameter("selection"));
 
 

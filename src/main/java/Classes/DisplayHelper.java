@@ -11,13 +11,12 @@ public class DisplayHelper {
     }
 
     public String displayAvailableCoursesDropdown() throws SQLException {
-        String courseDropdown = null;
+        String courseDropdown ="";
         EnrollmentMapper em = new EnrollmentMapper();
         ResultSet rs = em.getAvailableCourses(this.id);
-        String selection;
+
         while(rs.next()){
-            selection = rs.getString("identifier");
-            courseDropdown+="<option value='selection'>"+rs.getString("identifier")+rs.getString("classroom")+rs.getString("startDate")+rs.getString("endDate")+"</option>";
+            courseDropdown+="<option value='selection'>"+rs.getString("identifier")+"</option>";
         }
         return courseDropdown;
     }
