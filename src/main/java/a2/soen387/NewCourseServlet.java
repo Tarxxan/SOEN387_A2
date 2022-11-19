@@ -27,6 +27,7 @@ public class NewCourseServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath()+"/newcourse.jsp");
         }
         HttpSession session = request.getSession();
+
         String courseCode = request.getParameter("courseCode");
         String title =request.getParameter("courseTitle");
         String semester=request.getParameter("semester");
@@ -50,4 +51,3 @@ public class NewCourseServlet extends HttpServlet {
         }
     }
 }
-

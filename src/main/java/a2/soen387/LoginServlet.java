@@ -7,7 +7,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
-import java.math.BigDecimal;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -20,42 +20,58 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Person person = new Person();
+       Person person = new Person();
+       PersonMapper pm = new PersonMapper();
 
-        if(request.getParameter("studentid")!=null){
-            person.setPersonalID(BigDecimal.valueOf(Long.parseLong(request.getParameter("studentid"))));
+        if (request.getParameter("studentid") != null && request.getParameter("spassword") != null) {
+
+            person.setPersonalID(Integer.parseInt(request.getParameter("studentid")));
+            person.setPassword(request.getParameter("spassword"));
+
+            try {
+                ResultSet rs = pm.validateStudentLogin(person);
+                if (rs.getString("studentIdentifier") != null) {
+                    person.setFullName(rs.getString("studentIdentifier"));
+                    person.setIsStudent(true);
+                } else
+                    person.setIsStudent(false);
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        } else if (request.getParameter("employeeid") != null && request.getParameter("epassword") != null)
+            person.setPersonalID(Integer.parseInt("employeeid"));
+        person.setPassword(request.getParameter("epassword"));
+
+
+        try {
+            ResultSet rs = pm.validateEmployeeLogin(person);
+            if (rs.getString("employeeIdentifier") != null) {
+                person.setFullName(rs.getString("employeeIdentifier"));
+                person.setIsStudent(false);
+            } else
+                person.setIsStudent(true);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-        else if ((request.getParameter("employeeid")!=null))
-            person.setPersonalID(BigDecimal.valueOf(Long.parseLong("employeeid")));
+
 
         HttpSession session = request.getSession();
-        session.setAttribute("id",person.getPersonalID());
+        session.setAttribute("id", person.getPersonalID());
+        session.setAttribute("name", person.getFullName());
+        person.setPassword("");
 
-        PersonMapper pm = new PersonMapper();
-        try {
-            ResultSet rs =pm.findById(person);
-            while(rs.next()){
-                String fName= rs.getString("firstName");
-                String lName=rs.getString("lastName");
-                session.setAttribute("name",fName+" "+lName);
-                String id=Integer.toString(rs.getInt("personalId"));
-                if(0==Character.compare('1',id.charAt(0))) {
-                    person.setIsStudent(true);
-                } else {
-                    person.setIsStudent(false);
-                }
-            }
-            } catch (SQLException ex) {
-            throw new RuntimeException(ex);
+        if(person.getFullName() ==""){
+            response.getOutputStream().println("<script type=text/javascript>"+" window.alert('Id or password is incorrect')"+
+                    "window.location.href='index.jsp'</script>");
+            response.sendRedirect(request.getContextPath()+"/index.jsp");
         }
-
-        if (person.getIsStudent()){
-            response.sendRedirect(request.getContextPath()+"/registrationform.jsp");
+        if (person.getIsStudent()) {
+            response.sendRedirect(request.getContextPath() + "/registrationform.jsp");
+        } else  {
+            response.sendRedirect(request.getContextPath() + "/adminsite.jsp");
         }
-        else {
-            response.sendRedirect(request.getContextPath()+"/adminsite.jsp");
-        }
-
 
 
     }

@@ -3,14 +3,12 @@ package Classes;
 public class Enrollment {
 
     private int studentID;
-    private int enrollID;
-    private String courseCode;
+     private String courseIdentifier;
 
     public Enrollment(){}
-    public Enrollment(int studentID, int enrollID, String courseCode) {
+    public Enrollment(int studentID, String courseIdentifier) {
         this.studentID = studentID;
-        this.enrollID = enrollID;
-        this.courseCode = courseCode;
+        this.courseIdentifier = courseIdentifier;
     }
 
     public int getStudentID() {
@@ -21,19 +19,11 @@ public class Enrollment {
         this.studentID = studentID;
     }
 
-    public int getEnrollID() {
-        return enrollID;
-    }
-
-    public void setEnrollID(int enrollID) {
-        this.enrollID = enrollID;
-    }
-
     public String getCourseCode() {
-        return courseCode;
+        return this.courseIdentifier;
     }
 
-    public void setCourseCode(String courseCode) {
-        this.courseCode = courseCode;
+    public void courseIdentifier(String courseIdentifier) {
+        this.courseIdentifier = courseIdentifier;
     }
 }

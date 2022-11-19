@@ -18,7 +18,7 @@
 
   <div class="navbar">
     <a class="right" href="index.jsp" >Logout</a>
-    <a class="active" href="registrationform.jsp">Classes.Enrollment</a>
+    <a class="active" href="registrationform.jsp">Enrollment</a>
 
   </div>
 
@@ -33,7 +33,7 @@
             <label for="addCourse" class="center-box">Enroll</label>
             <select id="addCourse" name="addCourse">
             <% DisplayHelper dh= new DisplayHelper((int)session.getAttribute("id"));%>
-            <%= dh.displayCoursesDropdown()%>
+            <%= dh.displayAvailableCoursesDropdown()%>
             </select>
           </div>
 
@@ -54,7 +54,7 @@
       </div>
     </div>
     <div>
-    <%= dh.displayCourses()%>
+    <%= dh.displayActiveEnrolledCourses()%>
     </div>
 
   </div>

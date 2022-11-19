@@ -1,3 +1,4 @@
+<%@ page import="Classes.DisplayHelper" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 
@@ -18,7 +19,7 @@
   </div>
 
   <div class="navbar">
-    <a class="right" href="home.html" onclick="processLogout()">Logout</a>
+    <a class="right" href="index.jsp" onclick="processLogout()">Logout</a>
     <a class="active" href="adminsite.jsp">Reports</a>
     <a href="newemployee.jsp">New employee</a>
     <a href="newstudent.jsp">New student</a>
@@ -27,44 +28,65 @@
 
 
   <div class="content-wrapper w-container">
+
     <div class="row card">
+
+
       <div class="column ">
         <form method="POST" action="/adminServlet" target="myIframeAdmin">
           <div class="form-group">
 
             <label for="addCourse" >Course&nbsp;participants</label>
             <select id="addCourse" name="courseToDisplay">
+              <% DisplayHelper dh= new DisplayHelper((int)session.getAttribute("id"));%>
+                <%= dh.displayAvailableCoursesDropdown()%>
+              </select>
 
-              // REPLACE WITH JSP
-              <?php
-                        $b->displayCoursesDropdown();
-              ?>
             </select>
           </div>
           <input type="submit" name="rssubmit" value="Students in course"/>
         </form>
       </div>
+
+
+
       <div class="column ">
         <form method="POST" action="BusinessLogic.php" target="myIframeAdmin">
           <div class="form-group">
             <label for="studentCourse">Student&nbsp;course&nbsp;load</label>
             <select id="studentCourse" name="studentCourse">
+
+              <option value="${country.key}">${country.value}</option>
+              <c:forEach items="${mapCountries}" var="country">
+                <option value="${country.key}">${country.value}</option>
+              </c:forEach>
+
               <?php
                         $b->displayStudentDropdown();
               ?>
+
             </select>
           </div>
+
+
+
           <input type="submit" name="rcsubmit" value="Courses taken by student"/>
         </form>
       </div>
 
     </div>
+
+
+
     <div class="row">
       <iframe loading="lazy" name="myIframeAdmin"
               title="Report display window"
               width="100%" src="iframedefaut.html">
       </iframe>
     </div>
+
+
+
   </div>
 
 

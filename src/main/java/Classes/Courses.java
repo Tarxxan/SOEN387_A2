@@ -20,7 +20,6 @@ public class Courses {
 
     private Date endDate;
     private String instructor;
-    private int createdBy;
 
     public Courses(String courseCode, String title,String semester, String days,String instructor,String classroom, Time time, Date startDate, Date endDate, int createdBy) {
         this.courseCode = courseCode;
@@ -32,7 +31,6 @@ public class Courses {
         this.startDate = startDate;
         this.classroom=classroom;
         this.endDate = endDate;
-        this.createdBy = createdBy;
     }
 
     public String getInstructor() {
@@ -96,14 +94,6 @@ public class Courses {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
-    }
-
-    public int getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(int createdBy) {
-        this.createdBy = createdBy;
     }
 
     public String getClassroom() {

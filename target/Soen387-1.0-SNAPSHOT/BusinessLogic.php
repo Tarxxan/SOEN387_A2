@@ -80,19 +80,19 @@ class BusinessLogic
         if (!$result && $this->student) {
             echo '<script type="text/javascript">
                alert("Invalid ID/Password combination try again");
-               window.location.href="home.html"
+               window.location.href="index.jsp"
                           </script>';
 
         } elseif (!$result && !($this->bl->student) && isset($employeeid)) {
             echo '<script type="text/javascript">
             window.alert("Contact HR to make an admin account");
-            window.location.href="home.html"</script>';
+            window.location.href="index.jsp"</script>';
         } else {
             if ($this->student)
 
                  header("Location: registrationform.php");
             else {
-                header("Location: adminsite.php");
+                header("Location: adminsite.jsp");
             }
         }
     }

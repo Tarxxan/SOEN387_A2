@@ -55,7 +55,13 @@
                                placeholder="Street number"
                                type="text">
                     </div>
+                </div>
+                <div class="form-group">
 
+                    <input class="form-control" name="nsappartmentnumber" placeholder="Appartment number"
+                           type="text">
+
+                </div>
                     <div class="form-group">
                         <input class="form-control" name="nestreetname" placeholder="Street name"  type="text">
                     </div>

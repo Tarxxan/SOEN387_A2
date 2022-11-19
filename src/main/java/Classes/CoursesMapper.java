@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class CoursesMapper {
     private static Connection conn;
-    private final String insertSQL = "INSERT INTO railway.courses(courseCode,title,semester,days,time,instructor,classroom,startDate,endDate,createdBy)        VALUES(?,?,?,?,?,?,?,?,?,?)";
+    private final String insertSQL = "call createNewCourse(?,?,?,?,?,?,?,?,?,?);";
 
     public CoursesMapper() {
         if(this.conn==null)
@@ -24,7 +24,7 @@ public class CoursesMapper {
     }
 
     public void addClass(Courses c) throws SQLException {
-        //Add a count query before binding to ensure hes able to adda a class
+     //will ignore if already exist
         PreparedStatement stmt = conn.prepareStatement(insertSQL);
         this.setStmt(stmt,c);
         stmt.executeUpdate();
@@ -32,6 +32,7 @@ public class CoursesMapper {
     }
 
     private PreparedStatement setStmt(PreparedStatement stmt, Courses c) throws SQLException {
+
         stmt.setString(1,c.getCourseCode());
         stmt.setString(2,c.getTitle());
         stmt.setString(3,c.getSemester());
@@ -41,7 +42,6 @@ public class CoursesMapper {
         stmt.setString(6,c.getClassroom());
         stmt.setDate(8,c.getStartDate());
         stmt.setDate(9,c.getEndDate());
-        stmt.setInt(10,c.getCreatedBy());
-        return stmt;
+              return stmt;
     }
 }

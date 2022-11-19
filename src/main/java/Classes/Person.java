@@ -1,13 +1,13 @@
 package Classes;
 
-import java.math.BigDecimal;
 import java.sql.Date;
 
 public class Person {
 
     private String password;
     private boolean isStudent;
-    private BigDecimal personalID;
+    private int personalID;
+    private String fullName;
     private String firstName;
     private String lastName;
     private String appartmentNumber;
@@ -20,8 +20,7 @@ public class Person {
     private String city;
     private String streetNumber;
 
-    // add apt number
-    public Person(String password, String firstName, String lastName, String email, String phoneNumber, Date dateOfBirth, String streetName, String appartmentNumber, String country, String postalCode, String city, String streetNumber,  boolean isStudent) {
+    public Person(String password, String firstName, String lastName, String email, String phoneNumber, Date dateOfBirth, String streetName, String appartmentNumber, String country, String postalCode, String city, String streetNumber, boolean isStudent) {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -36,8 +35,15 @@ public class Person {
         this.streetNumber = streetNumber;
         this.isStudent = isStudent;
     }
-
     public Person() {
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getPassword() {
@@ -56,11 +62,11 @@ public class Person {
         this.appartmentNumber = appartmentNumber;
     }
 
-    public BigDecimal getPersonalID() {
+    public int getPersonalID() {
         return personalID;
     }
 
-    public void setPersonalID(BigDecimal personalID) {
+    public void setPersonalID(int personalID) {
         this.personalID = personalID;
     }
 

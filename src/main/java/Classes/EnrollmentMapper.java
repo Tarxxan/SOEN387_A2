@@ -8,9 +8,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class EnrollmentMapper {
-    private final String insertSQL = "INSERT INTO railway.courses(courseCode,title,semester,days,time,instructor,classroom,startDate,endDate,createdBy)        VALUES(?,?,?,?,?,?,?,?,?,?)";
-    private final String deleteSQL = "DELETE FROM railway.enrollment WHERE courseCode=? AND studentID=?";
-
+    String enroll= " INSERT ignore into enrollment(student, identifier, course)\n" +
+            "select ID_student,\n" +
+            "courseIdentifier,\n" +
+            " ID_courses FROM  student s inner join courses c on  s.ID_student = ? where c.courseIdentifier = ?;";
+    String drop = "DELETE  from enrollment e  WHERE e.student = ? and e.identifier =?";
     public EnrollmentMapper() {
     }
 
@@ -24,8 +26,7 @@ public class EnrollmentMapper {
     }
 
     public ResultSet getAvailableCourses(int id) throws SQLException {
-        String sql = " SELECT courses.courseCode, e.studentID " +
-                "FROM courses  LEFT JOIN (select * from enrollment where enrollment.studentID = ?) e ON (courses.courseCode = e.courseCode) where e.studentID is null ";
+        String sql = "call courseOfferingForStudent(?);";
         Connection conn = DBConnection.getConnection();
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setInt(1,id);
@@ -34,7 +35,7 @@ public class EnrollmentMapper {
     }
 
     public ResultSet getDropableCourses(int id)throws SQLException {
-        String sql = "SELECT courseCode FROM railway.enrollment WHERE studentID=?";
+        String sql = "call getDropableCourses(?);";
         Connection conn = DBConnection.getConnection();
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setInt(1,id);
@@ -42,12 +43,13 @@ public class EnrollmentMapper {
     }
 
     public ResultSet getEnrolledCourses(int id) throws SQLException {
-        String sql = "SELECT courses.courseCode,title, instructor ,startDate ,endDate  FROM railway.courses"+
-                " INNER JOIN railway.enrollment ON enrollment.courseCode= railway.courses.courseCode WHERE enrollment.studentID=?";
+        String sql = "call getEnrolledCourses(?);";
         Connection conn = DBConnection.getConnection();
         PreparedStatement stmt = conn.prepareStatement(sql,ResultSet.TYPE_SCROLL_SENSITIVE,
                 ResultSet.CONCUR_UPDATABLE);
         stmt.setInt(1,id);
         return stmt.executeQuery();
     }
+
+
 }
