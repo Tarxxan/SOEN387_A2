@@ -33,7 +33,6 @@
 
   <div class="content-wrapper w-container ">
 
-    <!--action="BusinessLogic.php"-->
     <form action="<%=request.getContextPath()%>/NewStudentServlet" method="post" name="nsform" novalidate onsubmit="return validatensformForm()"
           target="_self">
       <div class="row card">
