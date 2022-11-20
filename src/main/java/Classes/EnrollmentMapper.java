@@ -57,11 +57,26 @@ public class EnrollmentMapper {
     }
 
     public void addCourses(Enrollment enrollment) throws SQLException {
+        int count=0;
         Connection conn = DBConnection.getConnection();
+        CallableStatement cstmt = conn.prepareCall("{Call getEnrolledCourses(?)}");
+        cstmt.setInt(1,enrollment.getStudentID());
+        ResultSet r= cstmt.executeQuery();
+
+        while(r.next()){
+            count++;
+        }
+
+        if(count>=4){
+            r.close();
+            cstmt.close();
+
+        }
+        else{
         PreparedStatement stmt = conn.prepareStatement(enroll);
         stmt.setInt(1,enrollment.getStudentID());
         stmt.setString(2, enrollment.getCourseCode());
-        stmt.executeUpdate();
+        stmt.executeUpdate();}
     }
 
     public ResultSet getStudentsDropdown() throws SQLException {

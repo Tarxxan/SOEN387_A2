@@ -66,5 +66,5 @@
 </div>
 </body>
 
-
+<script type="text/javascript"> window.onload = alertName; </script>
 </html>
