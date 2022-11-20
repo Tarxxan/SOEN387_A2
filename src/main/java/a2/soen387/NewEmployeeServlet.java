@@ -23,7 +23,7 @@ public class NewEmployeeServlet extends HttpServlet {
         person.setFirstName(request.getParameter("nename"));
         person.setLastName(request.getParameter("nelastname"));
         person.setPhoneNumber(request.getParameter("nephone"));
-        person.setEmail(request.getParameter("nemail"));
+        person.setEmail(request.getParameter("neemail"));
         person.setDateOfBirth(Date.valueOf(request.getParameter("nedateofbirth")));
         person.setStreetName(request.getParameter("nestreetname"));
         person.setStreetNumber(request.getParameter("neestreetnumber"));
@@ -31,6 +31,7 @@ public class NewEmployeeServlet extends HttpServlet {
         person.setCountry(request.getParameter("necountry"));
         person.setCountry(request.getParameter("necountry"));
         person.setPostalCode(request.getParameter("nepostalcode"));
+        person.setPassword((request.getParameter("nepassword")));
         person.setIsStudent(false);
 
         PersonMapper pm = new PersonMapper();

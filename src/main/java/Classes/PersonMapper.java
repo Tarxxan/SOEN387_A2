@@ -35,7 +35,7 @@ public class PersonMapper {
         nextID_student.next();
 
         p.setPersonalID(nextID_student.getInt("AUTOINC"));
-        System.out.println(p.getDateOfBirth());
+
         st.close();
         nextID_student.close();
         CallableStatement stmt = conn.prepareCall("{CALL createNewStudent(?,?,?,?,?,?,?,?,?,?,?,?)}");
@@ -49,6 +49,9 @@ public class PersonMapper {
         Connection conn = DBConnection.getConnection();
         Statement st= conn.createStatement();
         ResultSet nextID_employee= st.executeQuery("SELECT AUTOINC FROM information_schema.INNODB_TABLESTATS where NAME = 'railway/employee';");
+        // move to first row
+        nextID_employee.next();
+
         p.setPersonalID(nextID_employee.getInt("AUTOINC"));
 
         st.close();

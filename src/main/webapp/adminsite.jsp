@@ -33,11 +33,11 @@
 
 
       <div class="column ">
-        <form method="POST" action="<%=request.getContextPath()%>/adminServlet" target="myIframeAdmin">
+        <form method="POST" action="<%=request.getContextPath()%>/AdminServlet" target="myIframeAdmin">
           <div class="form-group">
 
             <label for="addCourse" >Course&nbsp;participants</label>
-            <select id="addCourse" name="courseToDisplay">
+            <select id="addCourse" name="studentCourse">
               <% DisplayHelper dh= new DisplayHelper((int)session.getAttribute("id"));%>
                 <%= dh.displayAvailableCoursesDropdown()%>
               </select>
@@ -54,13 +54,10 @@
         <form method="POST" action="<%=request.getContextPath()%>/AdminServlet" target="myIframeAdmin">
           <div class="form-group">
             <label for="studentCourse">Student&nbsp;course&nbsp;load</label>
-            <select id="studentCourse" name="studentCourse">
+            <select id="studentCourse" name="courseToDisplay">
                 <%= dh.displayReportCourses()%>
             </select>
           </div>
-
-
-
           <input type="submit" name="rcsubmit" value="Courses taken by student"/>
         </form>
       </div>
@@ -72,7 +69,7 @@
     <div class="row">
       <iframe loading="lazy" name="myIframeAdmin"
               title="Report display window"
-              width="100%" src="src/main/webapp/iframedefault.html">
+              width="100%" src="iframedefault.html">
       </iframe>
     </div>
 

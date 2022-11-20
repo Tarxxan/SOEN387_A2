@@ -11,7 +11,6 @@
 </head>
 <body>
 
-
 <div class="header">
   <h1>Welcome&nbsp;to&nbsp;your&nbsp;school&nbsp;website</h1>
   <br>
