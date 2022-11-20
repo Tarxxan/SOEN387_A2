@@ -11,11 +11,13 @@ public class EnrollmentMapper {
     String drop = "DELETE from enrollment e  WHERE e.student = ? and e.identifier =?";
     public EnrollmentMapper() {
     }
-
-
-    public int insert() {
-        return 1;
+    public ResultSet getCourseReportDropdown() throws SQLException {
+        String sql = "{call courseReportDropdown()}";
+        Connection conn = DBConnection.getConnection();
+        CallableStatement stmt = conn.prepareCall(sql);
+        return stmt.executeQuery();
     }
+
 
     public ResultSet getAvailableCourses(int id) throws SQLException {
         String sql = "{call courseOfferingForStudent(?)}";

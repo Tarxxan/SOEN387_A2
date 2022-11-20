@@ -26,7 +26,7 @@ public class NewStudentServlet extends HttpServlet {
         person.setLastName(request.getParameter("nslastname"));
         person.setEmail(request.getParameter("nsemail"));
         person.setPhoneNumber(request.getParameter("nsphone"));
-        person.setPostalCode(request.getParameter("nsdateofbirth"));
+        person.setDateOfBirth(Date.valueOf(request.getParameter("nsdateofbirth")));
         person.setStreetName(request.getParameter("nsstreetname"));
         person.setAppartmentNumber(request.getParameter("nsappartmentnumber"));
         person.setCountry(request.getParameter("nscountry"));

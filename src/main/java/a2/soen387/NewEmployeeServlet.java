@@ -20,7 +20,7 @@ public class NewEmployeeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Person person = new Person();
-              person.setFirstName(request.getParameter("nename"));
+        person.setFirstName(request.getParameter("nename"));
         person.setLastName(request.getParameter("nelastname"));
         person.setPhoneNumber(request.getParameter("nephone"));
         person.setEmail(request.getParameter("nemail"));
@@ -31,7 +31,7 @@ public class NewEmployeeServlet extends HttpServlet {
         person.setCountry(request.getParameter("necountry"));
         person.setCountry(request.getParameter("necountry"));
         person.setPostalCode(request.getParameter("nepostalcode"));
-        //person.setStreetNumber(request.getParameter(""));
+        person.setIsStudent(false);
 
         PersonMapper pm = new PersonMapper();
         try {

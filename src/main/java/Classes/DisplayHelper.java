@@ -51,11 +51,11 @@ public class DisplayHelper {
         return courses;
     }
     public String displayReportCourses() throws SQLException {
-        String dropableCourses = null;
+        String dropableCourses = "";
         EnrollmentMapper em = new EnrollmentMapper();
-        ResultSet rs = em.getDropableCourses(this.id);
+        ResultSet rs = em.getCourseReportDropdown();
         while(rs.next()){
-            dropableCourses+="<option value='"+rs.getString("identifier")+"'></option>";
+            dropableCourses+="<option value='"+rs.getString("courseCode")+"'>"+rs.getString("title")+"</option>";
         }
 
         return dropableCourses;

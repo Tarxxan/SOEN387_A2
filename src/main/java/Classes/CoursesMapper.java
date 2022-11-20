@@ -1,9 +1,6 @@
 package Classes;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class CoursesMapper {
     private static Connection conn;
@@ -14,24 +11,15 @@ public class CoursesMapper {
             conn=DBConnection.getConnection();
     }
 
-    public ResultSet findById(Courses courses) {
-        ResultSet rs = null;
-        return (ResultSet) rs;
-    }
-
-    public int insert() {
-        return 1;
-    }
-
     public void addClass(Courses c) throws SQLException {
      //will ignore if already exist
-        PreparedStatement stmt = conn.prepareStatement(insertSQL);
+        CallableStatement stmt = conn.prepareCall(insertSQL);
         this.setStmt(stmt,c);
         stmt.executeUpdate();
 
     }
 
-    private PreparedStatement setStmt(PreparedStatement stmt, Courses c) throws SQLException {
+    private PreparedStatement setStmt(CallableStatement stmt, Courses c) throws SQLException {
 
         stmt.setString(1,c.getCourseCode());
         stmt.setString(2,c.getTitle());
@@ -42,6 +30,6 @@ public class CoursesMapper {
         stmt.setString(6,c.getClassroom());
         stmt.setDate(8,c.getStartDate());
         stmt.setDate(9,c.getEndDate());
-              return stmt;
+        return stmt;
     }
 }

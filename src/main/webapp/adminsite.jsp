@@ -33,13 +33,13 @@
 
 
       <div class="column ">
-        <form method="POST" action="/adminServlet" target="myIframeAdmin">
+        <form method="POST" action="<%=request.getContextPath()%>/adminServlet" target="myIframeAdmin">
           <div class="form-group">
 
             <label for="addCourse" >Course&nbsp;participants</label>
             <select id="addCourse" name="courseToDisplay">
               <% DisplayHelper dh= new DisplayHelper((int)session.getAttribute("id"));%>
-<%--                <%= dh.displayAvailableCoursesDropdown()%>--%>
+                <%= dh.displayAvailableCoursesDropdown()%>
               </select>
 
             </select>
@@ -51,15 +51,11 @@
 
 
       <div class="column ">
-        <form method="POST" action="BusinessLogic.php" target="myIframeAdmin">
+        <form method="POST" action="<%=request.getContextPath()%>/AdminServlet" target="myIframeAdmin">
           <div class="form-group">
             <label for="studentCourse">Student&nbsp;course&nbsp;load</label>
             <select id="studentCourse" name="studentCourse">
-
-                       <?php
-                        $b->displayStudentDropdown();
-              ?>
-
+                <%= dh.displayReportCourses()%>
             </select>
           </div>
 
@@ -76,7 +72,7 @@
     <div class="row">
       <iframe loading="lazy" name="myIframeAdmin"
               title="Report display window"
-              width="100%" src="iframedefaut.html">
+              width="100%" src="src/main/webapp/iframedefault.html">
       </iframe>
     </div>
 
