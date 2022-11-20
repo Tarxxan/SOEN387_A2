@@ -23,7 +23,7 @@ public class Enrollment {
         return this.courseIdentifier;
     }
 
-    public void courseIdentifier(String courseIdentifier) {
+    public void setCourseIdentifier(String courseIdentifier) {
         this.courseIdentifier = courseIdentifier;
     }
 }
