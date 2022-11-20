@@ -14,14 +14,14 @@ public class Courses {
 
     private String days;
 
-    private Time time;
+    private String time;
 
     private Date startDate;
 
     private Date endDate;
     private String instructor;
 
-    public Courses(String courseCode, String title,String semester, String days,String instructor,String classroom, Time time, Date startDate, Date endDate, int createdBy) {
+    public Courses(String courseCode, String title, String semester, String days, String instructor, String classroom, String time, Date startDate, Date endDate, int createdBy) {
         this.courseCode = courseCode;
         this.title = title;
         this.semester = semester;
@@ -72,11 +72,11 @@ public class Courses {
         this.days = days;
     }
 
-    public Time getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(String time) {
         this.time = time;
     }
 

@@ -49,7 +49,16 @@ public class DisplayHelper {
         System.out.println(courses);
         return courses;
     }
+    public String displayReportCourses() throws SQLException {
+        String dropableCourses = null;
+        EnrollmentMapper em = new EnrollmentMapper();
+        ResultSet rs = em.getDropableCourses(this.id);
+        while(rs.next()){
+            dropableCourses+="<option value='"+rs.getString("identifier")+"'></option>";
+        }
 
+        return dropableCourses;
+    }
 
 
     // TODO: 2022-11-19 create methods for reports

@@ -19,10 +19,14 @@
 </head>
 <body>
 <div class="page-container">
+
+
     <div class="header">
         <h1>Administrator site</h1>
         <h2>New&nbsp;administrator&nbsp;account</h2>
     </div>
+
+
     <div class="navbar">
         <a class="right" href="index.jsp" >Logout</a>
         <a href="adminsite.jsp">Reports</a>

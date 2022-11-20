@@ -9,36 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08d29141-7143-4bb3-b7b5-16901ce62cbc" name="Changes" comment="Adjusted Person and PersonMapper for new procedure queries, fetching the person_id before the insertion query is sent and simplified some code. Updated newstudent.jsp input texts and other minor stuff. Practical changes on the server db.">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="08d29141-7143-4bb3-b7b5-16901ce62cbc" name="Changes" comment="changed queries for procedures that discriminate past courses. PersonMapper uses methods to validate user login. Person has a new member fullName that comes from the db and is used to validate that user exists. Added appartmentNumber. Added todos.">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Courses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Courses.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Classes/CoursesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/CoursesMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Classes/DisplayHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/DisplayHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Enrollment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/EnrollmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/EnrollmentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/PersonMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/PersonMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/AddDropCourseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/AddDropCourseServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/AdminServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/LoginServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/NewCourseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/NewCourseServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/NewEmployeeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/NewEmployeeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/NewStudentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/NewStudentServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/BusinessLogic.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/BusinessLogic.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/adminsite.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminsite.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminsite.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/newcourse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newcourse.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/newemployee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newemployee.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/registrationform.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registrationform.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/studentsite.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/BusinessLogic.php" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/BusinessLogic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/adminsite.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/studentsite.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/newcourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/newcourse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/newemployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/newemployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/newstudent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/newstudent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newcourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newcourse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newemployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newemployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newstudent.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newstudent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +69,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2HYeFWbndPvINnAL6lHSHv6idmx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -104,7 +93,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
+    "settings.editor.selected.configurable": "StringManipulation"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -125,7 +114,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.0" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="SOEN387:war exploded">
@@ -136,12 +126,11 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="0f61c5a7-e404-4950-a19a-dd403fec998c" />
-        <option name="HTTP_PORT" value="20000" />
       </server-settings>
+      <log_file alias="Tomcat Host Manager Log" path="%IDEA_RUN:CATALINA_BASE%/logs/host-manager.*" />
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="63092" />
@@ -225,6 +214,8 @@
       <workItem from="1668466343768" duration="391000" />
       <workItem from="1668466744546" duration="34003000" />
       <workItem from="1668808040358" duration="29831000" />
+      <workItem from="1668867802036" duration="1317000" />
+      <workItem from="1668872342169" duration="10787000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure +working servlet and DB's lets get to implementing the function :)">
       <created>1668469319884</created>
@@ -278,7 +269,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>

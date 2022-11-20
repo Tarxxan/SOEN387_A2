@@ -54,11 +54,11 @@
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" name="days" pattern="\D*" placeholder="Days"  type="text">
+                        <input class="form-control" name="days" placeholder="Days"  type="text" title="ex Mon-Fri" >
                     </div>
                     <div class="form-group">
                         <input class="form-control" name="time" placeholder="Time"
-                               type="text">
+                               type="text" title="ex 12:00 to 14:00">
                     </div>
 
 

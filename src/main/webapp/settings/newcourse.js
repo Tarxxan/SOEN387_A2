@@ -1,7 +1,7 @@
-let datepattern = /^\d{4}-\d{2}-\d{2}$/
+let datepattern = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/
 let namespattern=/[a-zA-Z\s]+(\.)?[a-zA-Z]+/g;
 let coursecodepattern=/^[A-Z]{3,4}\s[1-9]{3,4}$/
-let timepattern =/(?:[01]\d|2[0123]):(?:[012345]\d)/
+let timepattern =/(?:[01]\d|2[0123]):(?:[012345]\d)\sto\s(?:[01]\d|2[0123]):(?:[012345]\d)/
 let roompattern = /\w$/
 
 function validatencformForm() {
@@ -60,13 +60,8 @@ function validatencformForm() {
         alert("Not a course title, try again");
         return false;
     }
-    const semesterarray = ["Fall", "Winter", "Summer"];
-    if(!semesterarray.includes(semester)) {
-        alert("Not a semester, try again");
-        return false;
-    }
 
-    const daysarray = ["Monday", "Tuesday", "Wednesday", "Thursday","Friday"];
+    const daysarray = ["Mon", "Tue", "Wed", "Thur","Fri,-"];
 
     if(!daysarray.includes(days)) {
         alert("Wrong day, try again");

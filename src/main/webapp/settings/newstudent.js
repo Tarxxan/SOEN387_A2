@@ -4,7 +4,7 @@ let postalcodepattern=/^[A-Z][1-9][a-zA-Z]\s[1-9][A-Z][1-9]$/g;
 let namespattern=/[a-zA-Z\s]+(\.)?[a-zA-Z]+/g;
 let phonepattern=/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g
 let emailpattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-let datepattern = /^\d{4}-\d{2}-\d{2}$/
+let datepattern = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/
 
 function validatensformForm() {
 

@@ -56,12 +56,7 @@
             <label for="studentCourse">Student&nbsp;course&nbsp;load</label>
             <select id="studentCourse" name="studentCourse">
 
-              <option value="${country.key}">${country.value}</option>
-              <c:forEach items="${mapCountries}" var="country">
-                <option value="${country.key}">${country.value}</option>
-              </c:forEach>
-
-              <?php
+                       <?php
                         $b->displayStudentDropdown();
               ?>
 

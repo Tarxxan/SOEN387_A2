@@ -32,7 +32,7 @@ public class NewCourseServlet extends HttpServlet {
         String semester=request.getParameter("semester");
         String days = request.getParameter("days");
         String instructor=request.getParameter("instructor");
-        Time time = Time.valueOf(request.getParameter("time"));
+        String time = request.getParameter("time");
         Date startDate = Date.valueOf(request.getParameter("startDate"));
         Date endDate = Date.valueOf(request.getParameter("endDate"));
         String classroom= request.getParameter("room");
@@ -50,4 +50,3 @@ public class NewCourseServlet extends HttpServlet {
         }
     }
 }
-

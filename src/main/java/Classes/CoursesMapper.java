@@ -37,7 +37,7 @@ public class CoursesMapper {
         stmt.setString(2,c.getTitle());
         stmt.setString(3,c.getSemester());
         stmt.setString(4,c.getDays());
-        stmt.setTime(5,c.getTime());
+        stmt.setString(5,c.getTime());
         stmt.setString(7,c.getInstructor());
         stmt.setString(6,c.getClassroom());
         stmt.setDate(8,c.getStartDate());
