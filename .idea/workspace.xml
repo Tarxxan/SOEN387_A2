@@ -9,22 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08d29141-7143-4bb3-b7b5-16901ce62cbc" name="Changes" comment="changed queries for procedures that discriminate past courses. PersonMapper uses methods to validate user login. Person has a new member fullName that comes from the db and is used to validate that user exists. Added appartmentNumber. Added todos.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d.xml" afterDir="false" />
+    <list default="true" id="08d29141-7143-4bb3-b7b5-16901ce62cbc" name="Changes" comment="Changes in the input forms, js validation patterns and servelets that have the wrong datatypes for the purpose.">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Courses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Courses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/CoursesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/CoursesMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/DisplayHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/DisplayHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/NewCourseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/NewCourseServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminsite.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminsite.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/newcourse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newcourse.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/newemployee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newemployee.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/newcourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/newcourse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/newemployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/newemployee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/newstudent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/newstudent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newcourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newcourse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newemployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newemployee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newstudent.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newstudent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/newstudent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newstudent.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +60,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2HYeFWbndPvINnAL6lHSHv6idmx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -80,6 +70,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Downloaded.Files.Path.Enabled": "true",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -215,7 +206,7 @@
       <workItem from="1668466744546" duration="34003000" />
       <workItem from="1668808040358" duration="29831000" />
       <workItem from="1668867802036" duration="1317000" />
-      <workItem from="1668872342169" duration="10787000" />
+      <workItem from="1668872342169" duration="13896000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure +working servlet and DB's lets get to implementing the function :)">
       <created>1668469319884</created>
@@ -252,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668770916853</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Changes in the input forms, js validation patterns and servelets that have the wrong datatypes for the purpose.">
+      <created>1668903041727</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668903041727</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +267,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -286,7 +284,19 @@
     <MESSAGE value="Most servlets and functionality implemented" />
     <MESSAGE value="Adjusted Person and PersonMapper for new procedure queries, fetching the person_id and simplified some code. Updated newstudent.jsp input texts and other minor stuff." />
     <MESSAGE value="Adjusted Person and PersonMapper for new procedure queries, fetching the person_id before the insertion query is sent and simplified some code. Updated newstudent.jsp input texts and other minor stuff. Practical changes on the server db." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusted Person and PersonMapper for new procedure queries, fetching the person_id before the insertion query is sent and simplified some code. Updated newstudent.jsp input texts and other minor stuff. Practical changes on the server db." />
+    <MESSAGE value="Changes in the input forms, js validation patterns and servelets that have the wrong datatypes for the purpose." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes in the input forms, js validation patterns and servelets that have the wrong datatypes for the purpose." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/newemployee.jsp</url>
+          <line>48</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
