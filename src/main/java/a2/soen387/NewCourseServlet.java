@@ -24,7 +24,7 @@ public class NewCourseServlet extends HttpServlet {
             if (strComp == 0 || strComp > 0) {
             response.getOutputStream().println("<script type=text/javascript>"+" window.alert('Start and End dates are incorrect, please verify before re-submitting')"+
             "window.location.href='newcourse.jsp'</script>");
-            response.sendRedirect(request.getContextPath()+ "/newcourse.jsp");
+            response.sendRedirect(request.getContextPath()+"/newcourse.jsp");
         }
         HttpSession session = request.getSession();
         String courseCode = request.getParameter("courseCode");

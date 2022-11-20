@@ -16,17 +16,19 @@ public class DisplayHelper {
         ResultSet rs = em.getAvailableCourses(this.id);
 
         while(rs.next()){
-            courseDropdown+="<option value='selection'>"+rs.getString("identifier")+"</option>";
+            String course=rs.getString("courseIdentifier");
+            courseDropdown+="<option value='"+course+"'>"+course+"</option>";
         }
         return courseDropdown;
     }
 
     public String displayDropableCourses() throws SQLException {
-        String dropableCourses = null;
+        String dropableCourses = "";
         EnrollmentMapper em = new EnrollmentMapper();
         ResultSet rs = em.getDropableCourses(this.id);
         while(rs.next()){
-            dropableCourses+="<option value='"+rs.getString("identifier")+"'></option>";
+            String course=rs.getString("identifier");
+            dropableCourses+="<option value='"+course+"'>"+course+"</option>";
         }
 
         return dropableCourses;
@@ -36,7 +38,7 @@ public class DisplayHelper {
 
         EnrollmentMapper em = new EnrollmentMapper();
         ResultSet rs = em.getEnrolledCourses(this.id);
-        //check if enmpty
+        //check if empty
         if(!rs.next()){
             return "";
         }
@@ -46,7 +48,6 @@ public class DisplayHelper {
         courses+="<tr><td>"+rs.getString("identifier")+"</td><tr>";
         }
         courses+="</table>";
-        System.out.println(courses);
         return courses;
     }
     public String displayReportCourses() throws SQLException {
