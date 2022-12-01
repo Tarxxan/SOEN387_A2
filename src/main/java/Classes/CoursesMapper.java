@@ -4,8 +4,10 @@ import java.sql.*;
 
 public class CoursesMapper {
     private static Connection conn;
-    private final String insertSQL = "call createNewCourse(?,?,?,?,?,?,?,?,?,?);";
+    private final String insertSQL = "call createNewCourse(?,?,?,?,?,?,?,?,?);";
+    private final String updateSQL = "";
 
+    private final String deleteSQL = "";
     public CoursesMapper() {
         if(this.conn==null)
             conn=DBConnection.getConnection();
@@ -31,5 +33,25 @@ public class CoursesMapper {
         stmt.setDate(8,c.getStartDate());
         stmt.setDate(9,c.getEndDate());
         return stmt;
+    }
+
+    public void delete(Courses course) throws SQLException {
+        CallableStatement stmt = conn.prepareCall(deleteSQL);
+        this.setStmt(stmt,course);
+        stmt.executeUpdate();
+    }
+
+    public ResultSet getAllCourses() throws SQLException {
+        String Courses="Select courseCode from courses";
+        System.out.println("In getAllCourses");
+        Statement stmt = conn.createStatement();
+        return stmt.executeQuery(Courses);
+    }
+
+    public void updateCourse(Courses course) throws SQLException {
+
+        CallableStatement stmt = conn.prepareCall(updateSQL);
+        this.setStmt(stmt,course);
+        stmt.executeUpdate();
     }
 }

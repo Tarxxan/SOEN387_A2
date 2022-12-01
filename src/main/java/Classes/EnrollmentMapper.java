@@ -99,4 +99,8 @@ public class EnrollmentMapper {
         stmt.setString(1,studentCourse);
         return stmt.executeQuery();
     }
+
+    public void delete(Enrollment e1) {
+
+    }
 }

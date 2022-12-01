@@ -9,7 +9,7 @@ public class DBConnection {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://containers-us-west-123.railway.app:5598/railway";
     static final String DB_USER = "root";
-    static final String DB_PASSWORD = "pGbD1yZXthDKdEibWtM1";
+    static final String DB_PASSWORD = "umuduHxn4z8pb8MG61ka";
     static Connection conn = null;
 
     public DBConnection() {

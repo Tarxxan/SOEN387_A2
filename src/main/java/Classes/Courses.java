@@ -33,6 +33,22 @@ public class Courses {
         this.endDate = endDate;
     }
 
+    public Courses() {
+
+    }
+
+//    public static boolean delete(Object o1, Object o2) {
+//        Courses c1= (Courses) o1;
+//        Courses c2= (Courses) o2;
+//
+//        if(c1.getCourseCode().equals(c2.getCourseCode())){
+//            CoursesMapper cm = new CoursesMapper();
+//            //cm.delete(c1);
+//            return true;
+//        }
+//        return false;
+//    }
+
     public String getInstructor() {
         return instructor;
     }

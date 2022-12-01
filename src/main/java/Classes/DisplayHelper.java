@@ -63,6 +63,16 @@ public class DisplayHelper {
         return courseReport;
     }
 
+    public static String displayAllCourses() throws SQLException {
+        String courseDropdown="";
+        CoursesMapper c = new CoursesMapper();
+        ResultSet rs = c.getAllCourses();
 
-    // TODO: 2022-11-19 create methods for reports
+        while(rs.next()){
+            String course=rs.getString("courseCode");
+            courseDropdown+="<option value='"+course+"'>"+course+"</option>";
+        }
+        return courseDropdown;
+    }
+
 }

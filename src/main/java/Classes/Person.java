@@ -157,4 +157,8 @@ public class Person {
     public void setIsStudent(boolean isStudent) {
         this.isStudent = isStudent;
     }
+
+    public static boolean delete(Object o1, Object o2){
+        return true;
+    }
 }

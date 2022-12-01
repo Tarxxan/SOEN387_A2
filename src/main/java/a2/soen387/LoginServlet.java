@@ -1,5 +1,6 @@
 package a2.soen387;
 
+import Classes.InheritanceMapper;
 import Classes.Person;
 import Classes.PersonMapper;
 import jakarta.servlet.*;
@@ -66,6 +67,8 @@ public class LoginServlet extends HttpServlet {
             }
         }
         HttpSession session = request.getSession();
+        InheritanceMapper inheritanceMapper= new InheritanceMapper();
+        session.setAttribute("Inheritance Mapper", inheritanceMapper);
         session.setAttribute("id", person.getPersonalID());
         session.setAttribute("name", person.getFullName());
         person.setPassword("");

@@ -79,4 +79,13 @@ public class PersonMapper {
 
         return stmt;
     }
+
+//    public void deleteEmp(Employee e1) throws SQLException {
+//        int id= e1.getPersonalID();
+//        Connection conn = DBConnection.getConnection();
+//        Statement st= conn.createStatement();
+//        st
+//
+//
+//    }
 }
