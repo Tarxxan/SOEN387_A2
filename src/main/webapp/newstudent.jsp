@@ -29,113 +29,118 @@
     <a href="newemployee.jsp">New employee</a>
     <a class="active" href="newstudent.jsp">New student</a>
     <a href="newcourse.jsp">New course</a>
+    <a href="altercourse.jsp">Modify course</a>
   </div>
 
   <div class="content-wrapper w-container ">
 
     <form action="<%=request.getContextPath()%>/NewStudentServlet" method="post" name="nsform" novalidate onsubmit="return validatensformForm()"
           target="_self">
-      <div class="row card">
-        <div class="column">
+      <div class="card">
+        <div class="content-section">
+          <label for="nsname" class="center-box">Add student</label>
+          <div class="row ">
+          <div class="col-50 ">
+
+            <div class="form-group">
+              <input class="form-control"id="nsname" name="nsname" placeholder="Name"  type="text">
+            </div>
+            <div class="form-group">
+
+              <input class="form-control" name="nslastname" placeholder="Last Name"
+                     type="text">
+
+            </div>
+            <div class="form-group">
+
+              <input class="form-control" name="nsdateofbirth" placeholder="Date of birth"
+                     type="date">
+
+            </div>
 
           <div class="form-group">
-            <input class="form-control" name="nsname" placeholder="Name"  type="text">
-          </div>
-          <div class="form-group">
-
-            <input class="form-control" name="nslastname" placeholder="Last Name"
-                   type="text">
-
-          </div>
-          <div class="form-group">
-
-            <input class="form-control" name="nsdateofbirth" placeholder="Date of birth"
-                   type="date">
-
-          </div>
-
-          <div class="form-group">
-            <input class="form-control" name="nsestreetnumber"
-                   placeholder="Street number"
-                   type="text">
-
-          </div>
-              <div class="form-group">
-
-          <input class="form-control" name="nsappartmentnumber" placeholder="Appartment number"
-                 type="text">
-
-        </div>
-          <div class="form-group">
-            <input class="form-control" name="nsstreetname" placeholder="Street name"
-
-                   type="text">
-
-          </div>
-          <div class="form-group">
-            <input class="form-control" name="nscity" placeholder="City"  type="text">
-
-          </div>
-          <div class="form-group">
-            <input class="form-control" name="nsprovince" placeholder="Province"
-                   type="text">
-
-          </div>
-
-          <div class="form-group">
-            <input class="form-control" name="nscountry" placeholder="Country"
-                   type="text">
-
-          </div>
-
-          <button class="btn center-box" onclick="window.location.href='adminsite.jsp';">Cancel
-          </button>
-
-        </div>
-        <div class=" column">
-
-          <div class="form-group">
-            <input class="form-control" name="nspostalcode"
-
-                   placeholder="Postal Code" type="text">
-
-          </div>
-          <div class="form-group">
-
-
 
             <input class="form-control" name="nsemail"  placeholder="Email" type="email">
 
           </div>
+
           <div class="form-group">
             <input class="form-control" name="nsphone"  placeholder="Phone number"
                    type="tel">
 
           </div>
-          <div class="form-group">
-            <input class="form-control" name="nspassword"
-                   placeholder="Password"
-                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                   type="password">
+            <div class="form-group">
+              <input class="form-control" name="nspassword"
+                     placeholder="Password"
+                     title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                     type="password">
+
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="nsconfirm-password"
+                     placeholder="confirm-password"
+
+                     title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                     type="password">
+            </div>
+          </div>
+                 <div class="col-50 ">
+
+            <div class="form-group">
+              <input class="form-control" name="nsestreetnumber"
+                     placeholder="Street number"
+                     type="text">
+
+            </div>
+            <div class="form-group">
+
+              <input class="form-control" name="nsappartmentnumber" placeholder="Appartment number"
+                     type="text">
+
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="nsstreetname" placeholder="Street name"
+
+                     type="text">
+
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="nscity" placeholder="City"  type="text">
+
+            </div>
+
+            <div class="form-group">
+              <input class="form-control" name="nsprovince" placeholder="Province"
+                     type="text">
+
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="nscountry" placeholder="Country"
+                     type="text">
+
+            </div>
+    <div class="form-group">
+            <input class="form-control" name="nspostalcode"
+
+                   placeholder="Postal Code" type="text">
 
           </div>
-          <div class="form-group">
-            <input class="form-control" name="nsconfirm-password"
-                   placeholder="confirm-password"
-
-                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                   type="password">
-
-          </div>
-
-          <input class="center-box" name="nssubmit" type="submit" value="Save">
-
-
         </div>
+
+      </div>
+
+        <input class="center-box" name="nssubmit" type="submit" value="Save">
+      </div>
       </div>
 
     </form>
+  </div>
 
+    <div class="content-section">
+    <button class="btn center-box" onclick="window.location.href='adminsite.jsp';">Cancel
+    </button>
+
+  </div>
     <footer class="footer">
 
     </footer>

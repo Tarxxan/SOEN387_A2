@@ -21,7 +21,7 @@ public class EnrollmentMapper {
 
 
     public ResultSet getAvailableCourses(int id) throws SQLException {
-        String sql = "{call courseOfferingForStudent(?)}";
+        String sql = "{call courseOfferingForthisStudent(?)}";
         Connection conn = DBConnection.getConnection();
         CallableStatement stmt = conn.prepareCall(sql);
         stmt.setInt(1,id);

@@ -69,7 +69,7 @@ public class DisplayHelper {
         ResultSet rs = c.getAllCourses();
 
         while(rs.next()){
-            String course=rs.getString("courseCode");
+            String course=rs.getString("courseIdentifier");
             courseDropdown+="<option value='"+course+"'>"+course+"</option>";
         }
         return courseDropdown;

@@ -7,7 +7,7 @@ public class CoursesMapper {
     private final String insertSQL = "call createNewCourse(?,?,?,?,?,?,?,?,?);";
     private final String updateSQL = "";
 
-    private final String deleteSQL = "";
+    private final String deleteSQL = "DELETE FROM courses WHERE courseIdentifier = ?;";
     public CoursesMapper() {
         if(this.conn==null)
             conn=DBConnection.getConnection();
@@ -42,7 +42,7 @@ public class CoursesMapper {
     }
 
     public ResultSet getAllCourses() throws SQLException {
-        String Courses="Select courseCode from courses";
+        String Courses="select distinct ID_courses, courseIdentifier from courses;";
         System.out.println("In getAllCourses");
         Statement stmt = conn.createStatement();
         return stmt.executeQuery(Courses);

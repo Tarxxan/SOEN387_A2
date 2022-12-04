@@ -24,6 +24,7 @@
     <a href="newemployee.jsp">New employee</a>
     <a href="newstudent.jsp">New student</a>
     <a href="newcourse.jsp">New course</a>
+    <a href="altercourse.jsp">Modify course</a>
   </div>
 
 
@@ -42,7 +43,7 @@
                 <%= dh.displayAvailableCoursesDropdown()%>
               </select>
 
-            </select>
+
           </div>
           <input type="submit" name="rssubmit" value="Students in course"/>
         </form>

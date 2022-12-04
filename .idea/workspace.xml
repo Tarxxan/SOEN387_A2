@@ -9,17 +9,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08d29141-7143-4bb3-b7b5-16901ce62cbc" name="Changes" comment="Changes in the input forms, js validation patterns and servelets that have the wrong datatypes for the purpose.">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="08d29141-7143-4bb3-b7b5-16901ce62cbc" name="Changes" comment="Changes in the input forms, new js,adjusting some procedures and queries">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/settings/altercourse.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/CoursesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/CoursesMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/DisplayHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/DisplayHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/EnrollmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/EnrollmentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminsite.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminsite.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/alterCourse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/altercourse.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/newcourse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newcourse.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/newemployee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newemployee.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/newstudent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newstudent.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/newcourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/newcourse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/BusinessLogic.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/courseattendance.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/formsstyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/formsstyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newcourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/settings/newcourse.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ComposerSettings">
     <execution />
@@ -79,7 +93,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/XAMPP/tomcat/webapps/SOEN387_A2/src/main/java/Classes",
+    "last_opened_file_path": "C:/XAMPP/tomcat/webapps/SOEN387_A2/src/main/webapp/settings",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -94,6 +108,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\XAMPP\tomcat\webapps\SOEN387_A2\src\main\webapp\settings" />
       <recent name="C:\Users\christian.henneveld\IdeaProjects\Soen387\src\main\java" />
       <recent name="C:\Users\christian.henneveld\IdeaProjects\Soen387\src\main\webapp" />
     </key>
@@ -267,7 +282,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -285,14 +300,15 @@
     <MESSAGE value="Adjusted Person and PersonMapper for new procedure queries, fetching the person_id and simplified some code. Updated newstudent.jsp input texts and other minor stuff." />
     <MESSAGE value="Adjusted Person and PersonMapper for new procedure queries, fetching the person_id before the insertion query is sent and simplified some code. Updated newstudent.jsp input texts and other minor stuff. Practical changes on the server db." />
     <MESSAGE value="Changes in the input forms, js validation patterns and servelets that have the wrong datatypes for the purpose." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in the input forms, js validation patterns and servelets that have the wrong datatypes for the purpose." />
+    <MESSAGE value="Changes in the input forms, new js,adjusting some procedures and queries" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes in the input forms, new js,adjusting some procedures and queries" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/newemployee.jsp</url>
-          <line>48</line>
+          <line>49</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
