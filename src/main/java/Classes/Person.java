@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Person {
 
     private String password;
-    private boolean isStudent;
+    boolean isStudent;
     private int personalID;
     private String fullName;
     private String firstName;
@@ -19,6 +19,8 @@ public class Person {
     private String postalCode;
     private String city;
     private String streetNumber;
+
+    private int contactDetails;
 
     public Person(String password, String firstName, String lastName, String email, String phoneNumber, Date dateOfBirth, String streetName, String appartmentNumber, String country, String postalCode, String city, String streetNumber, boolean isStudent) {
         this.password = password;
@@ -161,4 +163,20 @@ public class Person {
     public static boolean delete(Object o1, Object o2){
         return true;
     }
+
+    public boolean isStudent() {
+        return isStudent;
+    }
+
+    public void setStudent(boolean student) {
+        isStudent = student;
+    }
+
+    public int getContactDetails() {
+        return contactDetails;
+    }
+    public void setContactDetails(int contactDetails) {
+        this.contactDetails = contactDetails;
+    }
+
 }

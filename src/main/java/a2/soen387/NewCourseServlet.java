@@ -36,9 +36,9 @@ public class NewCourseServlet extends HttpServlet {
         Date startDate = Date.valueOf(request.getParameter("startDate"));
         Date endDate = Date.valueOf(request.getParameter("endDate"));
         String classroom= request.getParameter("room");
-        int createdBy= (int) session.getAttribute("id");
+//        int createdBy= (int) session.getAttribute("id");
 
-        Courses course = new Courses(courseCode,title,semester,days,classroom,instructor,time,startDate,endDate,createdBy);
+        Courses course = new Courses(courseCode,title,semester,days,classroom,instructor,time,startDate,endDate);
         CoursesMapper cm = new CoursesMapper();
         try {
             cm.addClass(course);

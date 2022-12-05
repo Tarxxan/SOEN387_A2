@@ -5,6 +5,7 @@ import java.sql.Time;
 
 public class Courses {
 
+    private int createdBy;
     private String classroom;
     private String courseCode;
 
@@ -21,7 +22,9 @@ public class Courses {
     private Date endDate;
     private String instructor;
 
-    public Courses(String courseCode, String title, String semester, String days, String instructor, String classroom, String time, Date startDate, Date endDate, int createdBy) {
+    private String courseIdentifier;
+
+    public Courses(String courseCode, String title, String semester, String days, String instructor, String classroom, String time, Date startDate, Date endDate) {
         this.courseCode = courseCode;
         this.title = title;
         this.semester = semester;
@@ -31,6 +34,7 @@ public class Courses {
         this.startDate = startDate;
         this.classroom=classroom;
         this.endDate = endDate;
+        this.createdBy=createdBy;
     }
 
     public Courses() {
@@ -65,7 +69,7 @@ public class Courses {
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public void setTitle(String title) {
@@ -89,7 +93,7 @@ public class Courses {
     }
 
     public String getTime() {
-        return time;
+        return this.time;
     }
 
     public void setTime(String time) {
@@ -118,4 +122,23 @@ public class Courses {
     public void setClassroom(String classroom) {
         this.classroom = classroom;
     }
+
+    public String getCourseIdentifier() {
+        return courseIdentifier;
+    }
+    public void setCourseIdentifier(String courseIdentifier) {
+        this.courseIdentifier = courseIdentifier;
+    }
+
+    public int getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(int createdBy) {
+        this.createdBy = createdBy;
+    }
+    public String toString(){
+        return this.courseIdentifier;
+    }
 }
+

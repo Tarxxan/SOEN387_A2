@@ -2,6 +2,8 @@ package Classes;
 
 import java.sql.*;
 
+import static Classes.DBConnection.conn;
+
 public class PersonMapper {
 
 
@@ -79,6 +81,48 @@ public class PersonMapper {
 
         return stmt;
     }
+
+    public void updatePerson(Person p) throws SQLException {
+            // Calls three procs to update
+            updateNameProc(p);
+            updateContactProc(p);
+            updateAddressProc(p);
+        }
+
+    private void updateAddressProc(Person p) throws SQLException {
+        CallableStatement stmt = conn.prepareCall("Call updateAddress(?,?,?,?,?,?,?)";
+        stmt.setInt(1,p.getPersonalID());
+        stmt.setString(2,p.getStreetNumber());
+        stmt.setString(3,p.getAppartmentNumber());
+        stmt.setString(4,p.getStreetName());
+        stmt.setString(5,p.getCity());
+        stmt.setString(6,p.getCountry());
+        stmt.setString(7,p.getPostalCode());
+        stmt.setDate(4,p.getDateOfBirth());
+        stmt.executeUpdate();
+    }
+
+    private void updateContactProc(Person p) throws SQLException {
+        CallableStatement stmt = conn.prepareCall("Call updateContact(?,?,?)");
+        stmt.setInt(1,p.getPersonalID());
+        stmt.setString(2,p.getEmail());
+        stmt.setString(3,p.getPhoneNumber());
+        stmt.executeUpdate();
+    }
+
+    private void updateNameProc(Person p) throws SQLException {
+        CallableStatement stmt = conn.prepareCall("Call updateName(?,?,?)");
+        stmt.setInt(1,p.getPersonalID());
+        stmt.setString(2,p.getFirstName());
+        stmt.setString(3,p.getLastName());
+        // In red because it doesnt take bug int yet
+        stmt.setDate(4,p.getDateOfBirth());
+        stmt.executeUpdate();
+        stmt.close();
+    }
+
+
+}
 
 //    public void deleteEmp(Employee e1) throws SQLException {
 //        int id= e1.getPersonalID();
