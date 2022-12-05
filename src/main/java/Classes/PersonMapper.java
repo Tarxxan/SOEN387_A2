@@ -90,7 +90,7 @@ public class PersonMapper {
         }
 
     private void updateAddressProc(Person p) throws SQLException {
-        CallableStatement stmt = conn.prepareCall("Call updateAddress(?,?,?,?,?,?,?)";
+        CallableStatement stmt = conn.prepareCall("Call updateAddress(?,?,?,?,?,?,?)");
         stmt.setInt(1,p.getPersonalID());
         stmt.setString(2,p.getStreetNumber());
         stmt.setString(3,p.getAppartmentNumber());
@@ -116,7 +116,7 @@ public class PersonMapper {
         stmt.setString(2,p.getFirstName());
         stmt.setString(3,p.getLastName());
         // In red because it doesnt take bug int yet
-        stmt.setDate(4,p.getDateOfBirth());
+//        stmt.setDate(4,p.getDateOfBirth());
         stmt.executeUpdate();
         stmt.close();
     }
@@ -132,4 +132,3 @@ public class PersonMapper {
 //
 //
 //    }
-}

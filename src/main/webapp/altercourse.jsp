@@ -1,4 +1,5 @@
 <%@ page import="Classes.DisplayHelper" %>
+<%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,10 +45,9 @@
                         <div class="form-group" style="width: 100%">
                             <label for="ucdropdown" class="center-box">Update Course</label>
                             <select id="ucdropdown" name="ucdropdown">
-                                try {
-                                <%= DisplayHelper.displayAllCourses()%>} catch (java.sql.SQLException e) {
-                                throw new RuntimeException(e);
-                                } %>
+                                <%= DisplayHelper.displayAllCourses()%>
+                                <%= session = request.getSession()%>
+                                <% session.setAttribute("Hashmap",DisplayHelper.idMap);%>
                             </select>
                         </div>
 
@@ -118,6 +118,9 @@
                             <label for="dcdropdown" class="center-box">Delete Course</label>
                             <select id="dcdropdown" name="dcdropdown">
                                 <%= DisplayHelper.displayAllCourses()%>
+
+<%--                                <%=session.setAttribute("Hashmap", DisplayHelper.idMap)%>--%>
+
                             </select>
                         </div>
                     </div>

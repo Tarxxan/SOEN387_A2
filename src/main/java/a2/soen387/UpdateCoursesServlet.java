@@ -1,6 +1,7 @@
 package a2.soen387;
 
 import Classes.Courses;
+import Classes.DisplayHelper;
 import Classes.EnrollmentMapper;
 import Classes.InheritanceMapper;
 import jakarta.servlet.*;
@@ -13,6 +14,8 @@ import java.sql.SQLException;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.Map;
 
 @WebServlet("/UpdateCoursesServlet")
 public class UpdateCoursesServlet extends HttpServlet {
@@ -24,10 +27,11 @@ public class UpdateCoursesServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        InheritanceMapper im = (InheritanceMapper) session.getAttribute("Inheritance Mapper");
 
+        InheritanceMapper im = (InheritanceMapper) session.getAttribute("Inheritance Mapper");
+        HashMap hash = (HashMap) session.getAttribute("Hashmap") ;
         //Dropdown select for courses on the page
-        String courseCode = request.getParameter("courseCode");
+        String courseCode = request.getParameter("ucdropdown");
 //        String courseIdentifier = request.getParameter("courseCode");
         String title =request.getParameter("courseTitle");
         String semester=request.getParameter("semester");
@@ -55,6 +59,10 @@ public class UpdateCoursesServlet extends HttpServlet {
 
 
         Courses course = new Courses(courseCode,title,semester,days,classroom,instructor,time,startDate,endDate);
+        course.setPkid((Integer) hash.get(course.getCourseCode()));
+
+        System.out.println(course.getPkid());
+
         try {
             if (im.inMapperCourse(course)) {
                 // Update course in memory and then pass this to the datbase to be updated.

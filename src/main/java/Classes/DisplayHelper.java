@@ -1,10 +1,11 @@
 package Classes;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 public class DisplayHelper {
 
+    public static HashMap<String,Integer> idMap= new HashMap();
     private int id;
     public DisplayHelper(int id) {
         this.id=id;
@@ -16,7 +17,9 @@ public class DisplayHelper {
         ResultSet rs = em.getAvailableCourses(this.id);
 
         while(rs.next()){
+//            int id= rs.getInt("ID_courses");
             String course=rs.getString("courseIdentifier");
+//            idMap.put(course,id);
             courseDropdown+="<option value='"+course+"'>"+course+"</option>";
         }
         return courseDropdown;
@@ -69,7 +72,10 @@ public class DisplayHelper {
         ResultSet rs = c.getAllCourses();
 
         while(rs.next()){
+            String courseIdentifier=rs.getString("courseIdentifier");
+            int id=rs.getInt("ID_courses");
             String course=rs.getString("courseCode");
+            idMap.put(course,id);
             courseDropdown+="<option value='"+course+"'>"+course+"</option>";
         }
         return courseDropdown;

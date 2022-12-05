@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 @WebServlet("/DeleteCourseServlet")
 public class DeleteCourseServlet extends HttpServlet {
@@ -19,10 +20,12 @@ public class DeleteCourseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         InheritanceMapper im = (InheritanceMapper) session.getAttribute("Inheritance Mapper");
+        String courseCode = request.getParameter("dcdropdown");
+        HashMap hash = (HashMap) session.getAttribute("Hashmap") ;
 
-        String courseCode = request.getParameter("courseCode");
         Courses course = new Courses();
         course.setCourseCode(courseCode);
+        course.setPkid((int) hash.get(courseCode));
         try {
             if (im.inMapperCourse(course)) {
                 im.deleteCourse(course);

@@ -38,7 +38,7 @@ public class CoursesMapper {
 
     public void delete(Courses course) throws SQLException {
         CallableStatement stmt = conn.prepareCall(deleteSQL);
-        stmt.setString(1,course.getCourseCode());
+        stmt.setInt(1,course.getPkid());
 //        this.setStmt(stmt,course);
         // Should Work
         System.out.println("Should Work");
@@ -60,7 +60,7 @@ public class CoursesMapper {
     }
 
     public PreparedStatement setStmtUpdate(CallableStatement stmt,Courses c) throws SQLException {
-        stmt.setInt(1,7);
+        stmt.setInt(1,c.getPkid());
         stmt.setString(2,c.getCourseCode());
         stmt.setString(3,c.getTitle());
         stmt.setString(4,c.getSemester());
