@@ -19,7 +19,7 @@ public class EnrollmentMapper {
         return stmt.executeQuery();
     }
 
-
+//provides only courses where the student is not already enrolled, are in the past or the enrollment date is past. For a list of all the courses ever taken by the student use studentCourseHistory()
     public ResultSet getAvailableCourses(int id) throws SQLException {
         String sql = "{call courseOfferingForthisStudent(?)}";
         Connection conn = DBConnection.getConnection();
@@ -27,7 +27,7 @@ public class EnrollmentMapper {
         stmt.setInt(1,id);
         return stmt.executeQuery();
     }
-
+//provides identifier and ID_courses. Excludes courses past the drop deadline.
     public ResultSet getDropableCourses(int id) throws SQLException {
         String sql = "{call getDropableCourses(?)}";
         Connection conn = DBConnection.getConnection();
@@ -35,7 +35,7 @@ public class EnrollmentMapper {
         stmt.setInt(1,id);
         return stmt.executeQuery();
     }
-
+    //excludes courses enrolled which finished before today. Provides identifier and ID_courses
     public ResultSet getEnrolledCourses(int id) throws SQLException {
         String sql = "{call getEnrolledCourses(?)}";
         Connection conn = DBConnection.getConnection();
@@ -55,7 +55,7 @@ public class EnrollmentMapper {
         stmt.executeUpdate();
 
     }
-
+//excludes courses enrolled which finished before today. Provides identifier and ID_courses
     public void addCourses(Enrollment enrollment) throws SQLException {
         int count=0;
         Connection conn = DBConnection.getConnection();
@@ -78,7 +78,7 @@ public class EnrollmentMapper {
         stmt.setString(2, enrollment.getCourseCode());
         stmt.executeUpdate();}
     }
-
+//provides identifier and ID_student
     public ResultSet getStudentsDropdown() throws SQLException {
         Connection conn = DBConnection.getConnection();
         CallableStatement stmt = conn.prepareCall("{Call studentReportDropdown()}");

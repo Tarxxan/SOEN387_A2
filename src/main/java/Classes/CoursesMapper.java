@@ -5,6 +5,7 @@ import java.sql.*;
 public class CoursesMapper {
     private static Connection conn;
     private final String insertSQL = "call createNewCourse(?,?,?,?,?,?,?,?,?);";
+    //ignores empty and null parameters, requires course id
     private final String updateSQL = "call updateCourse(?,?,?,?,?,?,?,?,?,?);";
     private final String deleteSQL = "call deleteCourse(?);";
     public CoursesMapper() {
@@ -21,8 +22,7 @@ public class CoursesMapper {
     }
 
     private PreparedStatement setStmt(CallableStatement stmt, Courses c) throws SQLException {
-
-
+      //TODO:  Adjust for parametters (inid , incourseCode,intitle ,insemester, indays,intime,ininstructor,inclassroom,instartDate ,inendDate)
         stmt.setString(1,c.getCourseCode());
         stmt.setString(2,c.getTitle());
         stmt.setString(3,c.getSemester());
@@ -44,6 +44,7 @@ public class CoursesMapper {
         System.out.println("Should Work");
 //        stmt.executeUpdate();
         }
+        
 
     public ResultSet getAllCourses() throws SQLException {
         String Courses="select * from courses";

@@ -22,7 +22,7 @@ public class InheritanceMapper {
         if (O instanceof Person) {
             if (O instanceof Student) {
                 Student s = (Student) O;
-                //TODO: We need something we can access everything in one area for a person. Then the code is essentially copy paste from courses but with person stuff
+                //TODO: We need something we can access everything in one area for a person. Then the code is essentially copy paste from courses but with person stuff. All personal information columns or all records related to this person?-Carolina
                 //ResultSet rs=this.WHATEVER FUNC
 
 
@@ -137,7 +137,7 @@ public class InheritanceMapper {
             }
         }
     }
-
+//TODO: Solved the date issue, you can default to null if you do not want to update this information.Validate the procedure and confirm that it is what you need.
     public Courses updateMemCourse(Courses course) {
         for (int i = 0; i < memoryObjects.size(); i++) {
             if (memoryObjects.get(i) instanceof Courses) {
@@ -270,7 +270,7 @@ public class InheritanceMapper {
                 }
             return false;
         }
-
+//TODO: Validate if the update procedures for person are useful or if you want them combined as one. They all detect if student or employee inside the procedure.
     public void updatePerson(Person p) throws SQLException {
         if(p.getPersonalID()>89999999){
             p= (Employee) p;
