@@ -29,6 +29,7 @@
         <a href="newstudent.jsp">New student</a>
         <a href="newcourse.jsp">New course</a>
         <a class="active" href="altercourse.jsp">Modify course</a>
+        <a href="updatePerson.jsp">Modify Person Info</a>
 
     </div>
 
