@@ -102,6 +102,9 @@
                             <div class="form-group">
                                 <input class="form-control" name="nppostalcode" placeholder="postal Code" type="text">
                             </div>
+                            <div class="form-group">
+                                <input class="form-control" name="npapartmentNum" placeholder="Apartment number" type="text">
+                            </div>
 
                         </div>
 
@@ -126,7 +129,7 @@
                                 <input class="form-control" name="npemail" placeholder="E-mail" type="email">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" name="npphonenumber" placeholder="Phone Number" type="text">
+                                <input class="form-control" name="npphone" placeholder="Phone Number" type="text">
                             </div>
 
 

@@ -12,6 +12,7 @@ function validatenpformForm() {
     let lastname = document.forms ["npform"] ["nplastname"].value;
     let streetnumber = document.forms ["npform"] ["npestreetnumber"].value;
     let streetname = document.forms ["npform"] ["npstreetname"].value;
+    let apartmentnumber= document.forms["npform"]["npapartmentNum"].value;
     let city = document.forms ["npform"] ["npcity"].value;
     let province = document.forms ["npform"] ["npprovince"].value;
     let country = document.forms ["npform"] ["npcountry"].value;
