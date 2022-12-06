@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Modify&nbsp;courses</title>
+    <title>Modify&nbsp;Person</title>
 
     <link href="settings/reset.css" rel="stylesheet">
     <link href="settings/styles.css" rel="stylesheet"/>
