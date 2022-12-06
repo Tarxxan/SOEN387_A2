@@ -44,7 +44,7 @@
 
         <div class="content-section">
 
-            <form action=<%= request.getContextPath() %>/UpdateCoursesServlet method="post" name="upform" onsubmit="return validatenpformForm()" target="_self">
+            <form action=<%= request.getContextPath() %>/UpdatePersonServlet method="post" name="upform" onsubmit="return validatenpformForm()" target="_self">
 
                 <div class="card ">
                     <div class="row ">
@@ -52,27 +52,21 @@
 
                             <%-- Make the drop down menu to pick an employee to modify  --%>
                         <div class="form-group" style="width: 100%">
-                            <label for="updropdown" class="center-box">Update Employee Information</label>
+                            <label for="updropdown" class="center-box">Update Information</label>
                             <select id="updropdown" name="updropdown">
-                                try {
-                                <%= DisplayHelper.displayAllCourses()%>
-                                } catch (java.sql.SQLException e) {
-                                throw new RuntimeException(e);
-                                } %>
+                                <%= DisplayHelper.displayAllPerson()%>
+
                             </select>
                         </div>
 
-                            <%-- Make the drop down menu to pick a student to modify  --%>
-                            <div class="form-group" style="width: 100%">
-                                <label for="updropdown2" class="center-box">Update Student Information</label>
-                                <select id="updropdown2" name="updropdown2">
-                                    try {
-                                    <%= DisplayHelper.displayAllCourses()%>
-                                    } catch (java.sql.SQLException e) {
-                                    throw new RuntimeException(e);
-                                    } %>
-                                </select>
-                            </div>
+<%--                            &lt;%&ndash; Make the drop down menu to pick a student to modify  &ndash;%&gt;--%>
+<%--                            <div class="form-group" style="width: 100%">--%>
+<%--                                <label for="updropdown2" class="center-box">Update Student Information</label>--%>
+<%--                                <select id="updropdown2" name="updropdown2">--%>
+<%--                                    <%= DisplayHelper.displayAllCourses()%>--%>
+<%--                                   --%>
+<%--                                </select>--%>
+<%--                            </div>--%>
 
                         </div>
                     </div>
@@ -166,6 +160,29 @@
             </footer>
         </div>
 
+    </div>
+    <div class="content-section">
+        <form action=<%= request.getContextPath() %>/DeletePersonServlet method="post" name="dpdform"
+              onsubmit="return validatencformForm()" target="_self">
+
+            <div class="card ">
+                <div class="row">
+
+                    <div class="form-group">
+
+                        <label for="dpdropdown" class="center-box">Delete Person</label>
+                        <select id="dpdropdown" name="dpdropdown">
+                            <%= DisplayHelper.displayAllPerson()%>
+                        </select>
+                    </div>
+                </div>
+
+                <input class="center-box" style="margin-bottom: 20px" name="dpdsubmit" type="submit"
+                       value="Delete Person">
+                <br>
+            </div>
+
+        </form>
     </div>
 </div>
 <script src="settings/updatePerson.js" type="text/javascript"></script>

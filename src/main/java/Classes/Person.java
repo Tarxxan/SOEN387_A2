@@ -179,4 +179,26 @@ public class Person {
         this.contactDetails = contactDetails;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "password='" + password + '\'' +
+                ", isStudent=" + isStudent +
+                ", personalID=" + personalID +
+                ", fullName='" + fullName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", appartmentNumber='" + appartmentNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", streetName='" + streetName + '\'' +
+                ", country='" + country + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", city='" + city + '\'' +
+                ", streetNumber='" + streetNumber + '\'' +
+                ", contactDetails=" + contactDetails +
+                '}';
+    }
 }
+

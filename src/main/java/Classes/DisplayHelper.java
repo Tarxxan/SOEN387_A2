@@ -11,6 +11,18 @@ public class DisplayHelper {
         this.id=id;
     }
 
+    public static String displayAllPerson() throws SQLException {
+        String personDropdown ="";
+        PersonMapper pm = new PersonMapper();
+        ResultSet rs = pm.getAllPerson();
+        while(rs.next()){
+            int id= rs.getInt("id");
+            String identifier = rs.getString("identifier");
+            personDropdown+="<option value='"+id+"'>"+identifier+" "+ id+"</option>";
+        }
+        return personDropdown;
+    }
+
     public String displayAvailableCoursesDropdown() throws SQLException {
         String courseDropdown ="";
         EnrollmentMapper em = new EnrollmentMapper();

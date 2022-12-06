@@ -19,18 +19,48 @@ public class InheritanceMapper {
     }
 
     public void findObject(Object O) throws SQLException {
-        if (O instanceof Person) {
-            if (O instanceof Student) {
-                Student s = (Student) O;
-                //TODO: We need something we can access everything in one area for a person. Then the code is essentially copy paste from courses but with person stuff. All personal information columns or all records related to this person?-Carolina
-                //ResultSet rs=this.WHATEVER FUNC
+        if (O instanceof Employee) {
+            Employee e = (Employee) O;
 
-
-                this.memoryObjects.add(s);
-            } else {
-                Employee e = (Employee) O;
-                this.memoryObjects.add(e);
+            ResultSet rs = this.PM.getAllPerson();
+            while (rs.next()) {
+                if (rs.getInt("id") == e.getPersonalID()) {
+                    e.setDateOfBirth(rs.getDate("dateOfBirth"));
+                    e.setPostalCode(rs.getString("postalCode"));
+                    e.setStreetNumber(rs.getString("streetNumber"));
+                    e.setEmail(rs.getString("email"));
+                    e.setPhoneNumber(rs.getString("phonenumber"));
+                    e.setAppartmentNumber(rs.getString("appartmentNumber"));
+                    e.setStreetName(rs.getString("streetName"));
+                    e.setCity(rs.getString("city"));
+                    e.setCountry(rs.getString("country"));
+//                   p.setFirstName(rs.getString("firstName"));
+//                   p.setLastName(rs.getString("lastName"));e
+//                   e.setFullName(rs.getString("identifier"));
+                    break;
+                }
             }
+            this.memoryObjects.add(e);
+        }
+       else if(O instanceof Student){
+           Student s= (Student) O;
+
+            ResultSet rs = this.PM.getAllPerson();
+            while (rs.next()) {
+                if (rs.getInt("id") == s.getPersonalID()) {
+                    s.setDateOfBirth(rs.getDate("dateOfBirth"));
+                    s.setPostalCode(rs.getString("postalCode"));
+                    s.setStreetNumber(rs.getString("streetNumber"));
+                    s.setEmail(rs.getString("email"));
+                    s.setPhoneNumber(rs.getString("phonenumber"));
+                    s.setAppartmentNumber(rs.getString("appartmentNumber"));
+                    s.setStreetName(rs.getString("streetName"));
+                    s.setCity(rs.getString("city"));
+                    s.setCountry(rs.getString("country"));
+                    break;
+                }
+            }
+            this.memoryObjects.add(s);
         } else if (O instanceof Courses) {
             Courses c = (Courses) O;
             ResultSet rs=this.CM.getAllCourses();
@@ -48,11 +78,7 @@ public class InheritanceMapper {
                     break;
                 }
             }
-            // Check this after
             this.memoryObjects.add(c);
-        } else {
-            Enrollment er = (Enrollment) O;
-            this.memoryObjects.add(er);
         }
     }
 
@@ -159,10 +185,10 @@ public class InheritanceMapper {
                     if(!course.getInstructor().equals("")){
                         c2.setInstructor(course.getInstructor());
                     }
-                    if(!course.getStartDate().equals("11111111")){
+                    if(course.getStartDate()!=null){
                         c2.setStartDate(course.getStartDate());
                     }
-                    if(!course.getEndDate().equals("11111112")){
+                    if(course.getEndDate()!=null){
                         c2.setEndDate(course.getEndDate());
                     }
 
@@ -177,16 +203,20 @@ public class InheritanceMapper {
 
     public Person updateMemPerson(Person p) {
         Person p2 = null;
-        for (int i = 0; i < memoryObjects.size(); i++) {
-            if (memoryObjects.get(i) instanceof Student) {
-                p2 = (Student) memoryObjects.get(i);
-                p = (Student) p;
-            }
-            else if(memoryObjects.get(i) instanceof Employee) {
-                p2 = (Employee) memoryObjects.get(i);
-                p = (Employee) p;
-            }
+//        Employee e,e2= null;
+//        Student s,s2=null;
 
+        for (int i = 0; i < memoryObjects.size(); i++) {
+            if (memoryObjects.get(i) instanceof Student || memoryObjects.get(i) instanceof Employee) {
+//                s2 = (Student) memoryObjects.get(i);
+//                s = (Student) p;
+//            }
+//            else if(memoryObjects.get(i) instanceof Employee) {
+//                e2 = (Employee) memoryObjects.get(i);
+//                e = (Employee) p;
+//            }
+                p= (Person) memoryObjects.get(i);
+            }
             if (p.getPersonalID() == p2.getPersonalID()) {
 
                 if(!p.getLastName().equals("")){
@@ -248,48 +278,69 @@ public class InheritanceMapper {
             }
         }
             return p;
-        }
+    }
     public Boolean inMapperPerson(Person p) {
             if(memoryObjects==null){
                 return false;
                 }
 
                 for (int i = 0; i < memoryObjects.size(); i++) {
-                    if (memoryObjects.get(i) instanceof Student) {
-                        Student s2 = (Student) memoryObjects.get(i);
-                        if (p.getPersonalID()==s2.getPersonalID()) {
-                            return true;
-                        }
-                    }
-                    else if (memoryObjects.get(i) instanceof Employee){
-                        Employee e2 = (Employee) memoryObjects.get(i);
-                        if (p.getPersonalID()==e2.getPersonalID()) {
+                    if (memoryObjects.get(i) instanceof Student || memoryObjects.get(i) instanceof Employee ) {
+                        Person p2 = (Person) memoryObjects.get(i);
+                        if (p.getPersonalID() == p2.getPersonalID()) {
                             return true;
                         }
                     }
                 }
+//                    }
+//                    else if (memoryObjects.get(i) instanceof Employee){
+//                        Employee e2 = (Employee) memoryObjects.get(i);
+//                        if (p.getPersonalID()==e2.getPersonalID()) {
+//                            return true;
+//                        }
+//                    }
+//                }
             return false;
         }
+
 //TODO: Validate if the update procedures for person are useful or if you want them combined as one. They all detect if student or employee inside the procedure.
     public void updatePerson(Person p) throws SQLException {
+        Employee e=null;
+        Student s=null;
         if(p.getPersonalID()>89999999){
-            p= (Employee) p;
+            e= (Employee) p;
         }
         else{
-            p = (Student) p;
+            s = (Student) p;
         }
 
         for (int i = 0; i < memoryObjects.size(); i++) {
-            if (memoryObjects.get(i) instanceof Student && ((Student) memoryObjects.get(i)).getPersonalID()==p.getPersonalID()) {
-                memoryObjects.set(i, p);
-                this.PM.updatePerson(p);
+            if (memoryObjects.get(i) instanceof Student && ((Student) memoryObjects.get(i)).getPersonalID()==s.getPersonalID()) {
+                System.out.println(p);
+                memoryObjects.set(i, s);
+                this.PM.updatePerson(s);
                 }
-            else if(memoryObjects.get(i) instanceof Employee && ((Employee) memoryObjects.get(i)).getPersonalID()==p.getPersonalID()){
-                memoryObjects.set(i, p);
-                this.PM.updatePerson(p);
+            else if(memoryObjects.get(i) instanceof Employee && ((Employee) memoryObjects.get(i)).getPersonalID()==e.getPersonalID()){
+                memoryObjects.set(i, e);
+                this.PM.updatePerson(e);
             }
 
         }
     }
 
+    public void deletePerson(Person p) throws SQLException {
+        for (int i = 0; i < memoryObjects.size(); i++) {
+            if (memoryObjects.get(i) instanceof Person) {
+               Person p2 = (Person) memoryObjects.get(i);
+                if (p2.getPersonalID()==p.getPersonalID()) {
+                    System.out.println("Calling delete");
+                    this.PM.delete(p);
+                    memoryObjects.remove(i);
+                }
+            }
+            else if(memoryObjects.get(i) instanceof Employee){
+                System.out.println("Instance of employee");
+            }
+        }
+    }
 }

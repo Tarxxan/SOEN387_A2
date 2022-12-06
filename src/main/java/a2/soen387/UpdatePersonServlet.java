@@ -21,68 +21,68 @@ public class UpdatePersonServlet extends HttpServlet {
         HttpSession session = request.getSession();
         InheritanceMapper im = (InheritanceMapper) session.getAttribute("Inheritance Mapper");
 
-        Date setDateOfBirth=null;
-        String firstName = request.getParameter("nsname");
-        String setLastName =request.getParameter("nslastname");
-        String setPhoneNumber=request.getParameter("nsphone");
-        String setEmail=request.getParameter("nsemail");
-        if(request.getParameter("nsdateofbirth").equals("")){
-          setDateOfBirth = new Date(11111111);
-        }
-        else{
-            setDateOfBirth= Date.valueOf(request.getParameter("nsdateofbirth"));
+        Date setDateOfBirth = null;
+        String firstName = request.getParameter("npname");
+        String setLastName = request.getParameter("nplastname");
+        String setPhoneNumber = request.getParameter("npphone");
+        String setEmail = request.getParameter("npemail");
+        if (request.getParameter("npdateofbirth").equals("")) {
+        } else {
+            setDateOfBirth = Date.valueOf(request.getParameter("npdateofbirth"));
         }
 
-        String setStreetName=request.getParameter("nsstreetname");
-        String  setStreetNumber = request.getParameter("nsestreetnumber");
-        String setCity=request.getParameter("nscity");
-        String setCountry =request.getParameter("nscountry");
-        String setAptNumber = request.getParameter("nsappartmentnumber");
-        String setPostalCode=request.getParameter("nspostalcode");
-        String setPassword =request.getParameter("nspassword");
+        String setStreetName = request.getParameter("npstreetname");
+        String setStreetNumber = request.getParameter("npestreetnumber");
+        String setCity = request.getParameter("npcity");
+        String setCountry = request.getParameter("npcountry");
+        String setAptNumber = request.getParameter("npappartmentnumber");
+        String setPostalCode = request.getParameter("nppostalcode");
+        String setPassword = request.getParameter("nppassword");
+        int id = Integer.parseInt(request.getParameter("updropdown"));
+        Employee e = null;
+        Student s = null;
 
-        //TODO: Add hidden form var in student change version for if statement below will submit the session var
-        // create dropdown with all employees and students for employees to pick for the id they will edit.
-
-        int id;
-        if((int)request.getAttribute("id")>89999999){
-            id= Integer.parseInt(request.getParameter("id"));
-        }
-        else{
-            id=(int)request.getAttribute("id");
-        }
-
-
-        Person p = new Person(setPassword,firstName,setLastName,setEmail,setPhoneNumber,setDateOfBirth,setStreetName,setAptNumber,setCountry,setPostalCode,setCity,setStreetNumber,false);
-        p.setPersonalID(id);
-
-        if(id>89999999){
-            p= (Employee) p;
-        }
-        else{
-            p = (Student) p;
+        System.out.println(setAptNumber);
+        System.out.println(setPhoneNumber);
+        System.out.println(setStreetName);
+        if (id > 89999999) {
+            e= new Employee(setPassword,firstName,setLastName,setEmail,setPhoneNumber,setDateOfBirth,setStreetName,setAptNumber,setCountry,setPostalCode,setCity,setStreetNumber,false);
+            e.setPersonalID(id);
+        } else {
+            s = new Student(setPassword,firstName,setLastName,setEmail,setPhoneNumber,setDateOfBirth,setStreetName,setAptNumber,setCountry,setPostalCode,setCity,setStreetNumber);
+            s.setPersonalID(id);
         }
 
         try {
-            if (im.inMapperPerson(p)) {
-
-                p = im.updateMemPerson(p);
-                System.out.println("Mapper");
-                im.updatePerson(p);
-
+            if (s == null) {
+                if (im.inMapperPerson(e)) {
+                    e = (Employee) im.updateMemPerson(e);
+                    System.out.println("Mapper");
+                    im.updatePerson(e);
+                } else {
+                    // check course for logic on why we do this
+                    im.memoryObjects.add(e);
+                    im.updatePerson(e);
+                    im.findObject(e);
+                }
             } else {
-                // check course for logic on why we do this
-                im.memoryObjects.add(p);
-                im.updatePerson(p);
-                im.findObject(p);
+                if (im.inMapperPerson(s)) {
+                    s = (Student) im.updateMemPerson(s);
+                    System.out.println("Mapper");
+                    im.updatePerson(s);
+
+                } else {
+                    // check course for logic on why we do this
+                    im.memoryObjects.add(s);
+                    im.updatePerson(s);
+                    im.findObject(s);
+                }
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        finally {
-            session.setAttribute("Inheritance Mapper",im);
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        } finally {
+            session.setAttribute("Inheritance Mapper", im);
             response.sendRedirect(request.getContextPath() + "/updatePerson.jsp");
         }
-
     }
 }

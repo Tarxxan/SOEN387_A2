@@ -8,7 +8,9 @@ public class Student extends Person{
     public Student(){
         super();
     }
+
     public Student(String password, String firstName, String lastName, String email, String phoneNumber, Date dateOfBirth, String streetName, String appartmentNumber, String country, String postalCode, String city, String streetNumber) {
+        //Shows doing it this way aswell as through the super class in employee also works to get our vars set.
         this.setPassword(password);
         this.setFirstName(firstName);
         this.setLastName(lastName);

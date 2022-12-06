@@ -84,7 +84,7 @@ public class PersonMapper {
 
     public void updatePerson(Person p) throws SQLException {
             // Calls three procs to update
-            updateNameProc(p);
+            //updateNameProc(p);
             updateContactProc(p);
             updateAddressProc(p);
         }
@@ -111,17 +111,39 @@ public class PersonMapper {
     }
 
     private void updateNameProc(Person p) throws SQLException {
-        CallableStatement stmt = conn.prepareCall("Call updateName(?,?,?)");
+        CallableStatement stmt = conn.prepareCall("Call updateName(?,?,?,?)");
         stmt.setInt(1,p.getPersonalID());
         stmt.setString(2,p.getFirstName());
         stmt.setString(3,p.getLastName());
-        // In red because it doesnt take bug int yet
-//        stmt.setDate(4,p.getDateOfBirth());
+        stmt.setDate(4,p.getDateOfBirth());
         stmt.executeUpdate();
         stmt.close();
     }
 
 
+    public ResultSet getAllPerson() throws SQLException {
+        CallableStatement stmt = conn.prepareCall("Call personPersonalInfo()");
+        return stmt.executeQuery();
+
+
+
+    }
+
+    public void delete(Person p) throws SQLException {
+
+        CallableStatement stmt;
+        System.out.println(p.getPersonalID());
+        if(p.getPersonalID()>89999999){
+            stmt = conn.prepareCall("Call deleteEmployee(?)");
+        }
+        else{
+            stmt = conn.prepareCall("Call deleteStudent(?)");
+        }
+        stmt.setInt(1,p.getPersonalID());
+        System.out.println(p.getPersonalID());
+        stmt.executeQuery();
+
+    }
 }
 
 //    public void deleteEmp(Employee e1) throws SQLException {
