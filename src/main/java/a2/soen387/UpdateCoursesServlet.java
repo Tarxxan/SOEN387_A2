@@ -1,21 +1,18 @@
 package a2.soen387;
 
 import Classes.Courses;
-import Classes.DisplayHelper;
-import Classes.EnrollmentMapper;
 import Classes.InheritanceMapper;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
-import java.sql.Time;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
-import java.util.Map;
 
 @WebServlet("/UpdateCoursesServlet")
 public class UpdateCoursesServlet extends HttpServlet {
@@ -81,6 +78,7 @@ public class UpdateCoursesServlet extends HttpServlet {
             }
         finally {
             session.setAttribute("Inheritance Mapper",im);
+            response.sendRedirect(request.getContextPath()+"/altercourse.jsp");
 
         }
     }

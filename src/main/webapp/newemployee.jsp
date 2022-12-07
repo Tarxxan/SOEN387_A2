@@ -67,9 +67,9 @@
                     <div class="form-group">
                         <input class="form-control" name="necity" placeholder="City" type="text">
                     </div>
-                    <div class="form-group">
-                        <input class="form-control" name="neprovince" placeholder="Province" type="text">
-                    </div>
+<%--                    <div class="form-group">--%>
+<%--                        <input class="form-control" name="neprovince" placeholder="Province" type="text">--%>
+<%--                    </div>--%>
                     <div class="form-group">
                         <input class="form-control" name="necountry" placeholder="Country"
                                type="text">

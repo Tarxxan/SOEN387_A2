@@ -110,11 +110,11 @@
 
             </div>
 
-            <div class="form-group">
-              <input class="form-control" name="nsprovince" placeholder="Province"
-                     type="text">
+<%--            <div class="form-group">--%>
+<%--              <input class="form-control" name="nsprovince" placeholder="Province"--%>
+<%--                     type="text">--%>
 
-            </div>
+<%--            </div>--%>
             <div class="form-group">
               <input class="form-control" name="nscountry" placeholder="Country"
                      type="text">

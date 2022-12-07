@@ -26,7 +26,6 @@
 
     <div class="row card">
 
-
       <div class="column">
         <form method="POST" action="<%=request.getContextPath()%>/AddDropCourseServlet" target="_self">
           <div class="form-group">

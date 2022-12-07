@@ -24,7 +24,14 @@ public class UpdatePersonServlet extends HttpServlet {
         Date setDateOfBirth = null;
         String firstName = request.getParameter("npname");
         String setLastName = request.getParameter("nplastname");
-        String setPhoneNumber=request.getParameter("npphone");
+        String setPhoneNumber;
+        if(request.getParameter("nphone")==null){
+            setPhoneNumber= "";
+        }
+        else{
+            setPhoneNumber= request.getParameter("npphone");
+        }
+
         String setEmail = request.getParameter("npemail");
         if(!request.getParameter("npdateofbirth").equals("")){
             setDateOfBirth = Date.valueOf(request.getParameter("npdateofbirth"));
@@ -80,6 +87,7 @@ public class UpdatePersonServlet extends HttpServlet {
                 if (im.inMapperPerson(s)) {
                     s = (Student) im.updateMemPerson(s);
                     System.out.println("Mapper");
+                    System.out.println(s);
                     im.updatePerson(s);
 
                 } else {

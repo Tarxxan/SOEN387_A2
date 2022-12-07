@@ -112,9 +112,9 @@
                             <div class="form-group">
                                 <input class="form-control" name="npcity" placeholder="City" type="text">
                             </div>
-                            <div class="form-group">
-                                <input class="form-control" name="npprovince" placeholder="Province" type="text">
-                            </div>
+<%--                            <div class="form-group">--%>
+<%--                                <input class="form-control" name="npprovince" placeholder="Province" type="text">--%>
+<%--                            </div>--%>
                             <div class="form-group">
                                 <input class="form-control" name="npcountry" placeholder="Country"
                                        type="text">

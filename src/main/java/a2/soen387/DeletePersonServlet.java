@@ -1,13 +1,17 @@
 package a2.soen387;
 
-import Classes.*;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import Classes.Employee;
+import Classes.InheritanceMapper;
+import Classes.Student;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.HashMap;
 
 @WebServlet("/DeletePersonServlet")
 public class DeletePersonServlet extends HttpServlet {
@@ -52,6 +56,7 @@ public class DeletePersonServlet extends HttpServlet {
         }
         finally {
             session.setAttribute("Inheritance Mapper",im);
+            response.sendRedirect(request.getContextPath()+"/updatePerson.jsp");
 
         }
     }

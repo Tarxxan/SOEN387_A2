@@ -39,6 +39,7 @@ public class DeleteCourseServlet extends HttpServlet {
         }
         finally {
             session.setAttribute("Inheritance Mapper",im);
+            response.sendRedirect(request.getContextPath()+"/altercourse.jsp");
         }
 
         // add a redirect to the page they were currently on probably the Change/Delete Course page

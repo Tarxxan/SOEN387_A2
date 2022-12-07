@@ -34,8 +34,8 @@ public class InheritanceMapper {
                     e.setStreetName(rs.getString("streetName"));
                     e.setCity(rs.getString("city"));
                     e.setCountry(rs.getString("country"));
-//                   p.setFirstName(rs.getString("firstName"));
-//                   p.setLastName(rs.getString("lastName"));e
+                   e.setFirstName(rs.getString("firstName"));
+                   e.setLastName(rs.getString("lastName"));
 //                   e.setFullName(rs.getString("identifier"));
                     break;
                 }
@@ -57,6 +57,8 @@ public class InheritanceMapper {
                     s.setStreetName(rs.getString("streetName"));
                     s.setCity(rs.getString("city"));
                     s.setCountry(rs.getString("country"));
+                    s.setFirstName(rs.getString("firstName"));
+                    s.setLastName(rs.getString("lastName"));
                     break;
                 }
             }
@@ -170,29 +172,29 @@ public class InheritanceMapper {
                 Courses c2 = (Courses) memoryObjects.get(i);
                 if (course.getCourseCode().equals(c2.getCourseCode())) {
 
-                    if(!course.getDays().equals("")){
+                    if(course.getDays().equals("")){
                         c2.setDays(course.getDays());
                     }
-                    if(!course.getTitle().equals("")){
+                    if(course.getTitle().equals("")){
                         c2.setTitle(course.getTitle());
                     }
-                    if(!course.getTime().equals("")){
+                    if(course.getTime().equals("")){
                         c2.setTime(course.getTime());
                     }
-                    if(!course.getSemester().equals("")){
+                    if(course.getSemester().equals("")){
                         c2.setSemester(course.getSemester());
                     }
-                    if(!course.getInstructor().equals("")){
+                    if(course.getInstructor().equals("")){
                         c2.setInstructor(course.getInstructor());
                     }
-                    if(course.getStartDate()!=null){
+                    if(course.getStartDate()==null){
                         c2.setStartDate(course.getStartDate());
                     }
-                    if(course.getEndDate()!=null){
+                    if(course.getEndDate()==null){
                         c2.setEndDate(course.getEndDate());
                     }
 
-                    if(!course.getClassroom().equals("")){
+                    if(course.getClassroom().equals("")){
                         c2.setClassroom(course.getClassroom());
                     }
                 }
@@ -204,28 +206,31 @@ public class InheritanceMapper {
     public Person updateMemPerson(Person p) {
 
         for (int i = 0; i < memoryObjects.size(); i++) {
-            System.out.println(memoryObjects.get(i) instanceof Student);
+            System.out.println((memoryObjects.get(i) instanceof Student)+"Call from mapper");
             if (memoryObjects.get(i) instanceof Student){
                 Student s2= (Student) memoryObjects.get(i);
-                Student s1 = (Student) p;
-
-                if (s1.getPersonalID() == s2.getPersonalID()) {
+                if (p.getPersonalID() == s2.getPersonalID()) {
+                    Student s1 = (Student) p;
+                    System.out.println(s1);
+                    System.out.println(s2);
                     s1 = (Student) updatePersonVars(s1, s2);
                     memoryObjects.set(i, s1);
+                    System.out.println(memoryObjects.get(i));
                     return s1;
                 }
-
             }
-            else if(memoryObjects.get(i) instanceof Employee) {
-             Employee e1 = (Employee) p;
-             Employee e2= (Employee) memoryObjects.get(i);
 
-            if (e1.getPersonalID() == e2.getPersonalID()) {
-                e1 = (Employee) updatePersonVars(e1, e2);
-                memoryObjects.set(i, e1);
-                return e1;
-            }}
-     }
+            else if(memoryObjects.get(i) instanceof Employee) {
+                Employee e2= (Employee) memoryObjects.get(i);
+                if (p.getPersonalID() == e2.getPersonalID()) {
+                    Employee e1 = (Employee) p;
+                    e1 = (Employee) updatePersonVars(e1, e2);
+                    memoryObjects.set(i, e1);
+                    return e1;
+                }
+            }
+        }
+
         return p; }
     public Boolean inMapperPerson(Person p) {
             if(memoryObjects==null){
@@ -250,51 +255,40 @@ public class InheritanceMapper {
         Student s=null;
         if(p.getPersonalID()>89999999){
             e= (Employee) p;
+            this.PM.updatePerson(e);
         }
         else{
             s = (Student) p;
+            this.PM.updatePerson(s);
         }
 
-        for (int i = 0; i < memoryObjects.size(); i++) {
-            if (memoryObjects.get(i) instanceof Student && ((Student) memoryObjects.get(i)).getPersonalID()==s.getPersonalID()) {
-                s= (Student) memoryObjects.get(i);
-                memoryObjects.set(i, s);
-                this.PM.updatePerson(s);
-                }
-            else if(memoryObjects.get(i) instanceof Employee && ((Employee) memoryObjects.get(i)).getPersonalID()==e.getPersonalID()){
-                e= (Employee) memoryObjects.get(i);
-                System.out.println(e);
-                memoryObjects.set(i, e);
-                this.PM.updatePerson(e);
-            }
 
         }
-    }
+
 
    public Person updatePersonVars(Person p,Person p2 ){
         if (p.getPersonalID() == p2.getPersonalID()) {
-
-            if(!p.getLastName().equals("")){
+            if(p.getLastName().equals("")){
                 p.setLastName(p2.getLastName());
             }
 
-            if(!p.getFirstName().equals("")){
+            if(p.getFirstName().equals("")){
                 p.setFirstName(p2.getFirstName());
             }
 
-            if(!p.getCity().equals("")){
+            if(p.getCity().equals("")){
                 p.setCity(p2.getCity());
             }
 
-            if(!p.getCountry().equals("")){
+            if(p.getCountry().equals("")){
                 p.setCountry(p2.getCountry());
             }
 
-            if(!p.getAppartmentNumber().equals("")){
+            if(p.getAppartmentNumber().equals("")){
                 p.setAppartmentNumber(p2.getAppartmentNumber());
             }
 
-            if(!p.getEmail().equals("")){
+            if(p.getEmail().equals("")){
                 p.setEmail(p2.getEmail());
             }
 
@@ -302,19 +296,19 @@ public class InheritanceMapper {
                 p.setIsStudent(p2.getIsStudent());
             }
 
-            if(p.getPhoneNumber()!=null){
+            if(p.getPhoneNumber().equals("")){
                 p.setPhoneNumber(p2.getPhoneNumber());
             }
 
-            if(!p.getStreetName().equals("")){
+            if(p.getStreetName().equals("")){
                 p.setStreetName(p2.getStreetName());
             }
 
-            if(!p.getStreetNumber().equals("")) {
-                p.setStreetNumber(p.getStreetNumber());
+            if(p.getStreetNumber().equals("")) {
+                p.setStreetNumber(p2.getStreetNumber());
             }
 
-            if(!p.getPostalCode().equals("")){
+            if(p.getPostalCode().equals("")){
                 p.setPostalCode(p2.getPostalCode());
             }
 
@@ -327,7 +321,7 @@ public class InheritanceMapper {
 //
 //                }
 
-            if(p.getDateOfBirth()!=null){
+            if(p.getDateOfBirth()==null){
                 p.setDateOfBirth(p2.getDateOfBirth());
             }
 

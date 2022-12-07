@@ -20,9 +20,7 @@ public class Person {
     private String city;
     private String streetNumber;
 
-    private int contactDetails;
-
-    public Person(String password, String firstName, String lastName, String email, String phoneNumber, Date dateOfBirth, String streetName, String appartmentNumber, String country, String postalCode, String city, String streetNumber, boolean isStudent) {
+    public Person(String password, String firstName, String lastName, String email, String phoneNumber, Date dateOfBirth, String streetName, String appartmentNumber, String country, String postalCode, String city,String streetNumber, boolean isStudent) {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -160,25 +158,6 @@ public class Person {
         this.isStudent = isStudent;
     }
 
-    public static boolean delete(Object o1, Object o2){
-        return true;
-    }
-
-    public boolean isStudent() {
-        return isStudent;
-    }
-
-    public void setStudent(boolean student) {
-        isStudent = student;
-    }
-
-    public int getContactDetails() {
-        return contactDetails;
-    }
-    public void setContactDetails(int contactDetails) {
-        this.contactDetails = contactDetails;
-    }
-
     @Override
     public String toString() {
         return "Person{" +
@@ -197,8 +176,7 @@ public class Person {
                 ", postalCode='" + postalCode + '\'' +
                 ", city='" + city + '\'' +
                 ", streetNumber='" + streetNumber + '\'' +
-                ", contactDetails=" + contactDetails +
                 '}';
     }
-}
 
+}
