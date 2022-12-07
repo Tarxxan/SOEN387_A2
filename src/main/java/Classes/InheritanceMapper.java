@@ -175,32 +175,34 @@ public class InheritanceMapper {
                 if (course.getPkid()==(c2.getPkid())) {
 
                     if(course.getDays().equals("")){
-                        c2.setDays(course.getDays());
+                        course.setDays(c2.getDays());
                     }
                     if(course.getTitle().equals("")){
-                        c2.setTitle(course.getTitle());
+                        course.setTitle(c2.getTitle());
                     }
                     if(course.getTime().equals("")){
-                        c2.setTime(course.getTime());
+                        course.setTime(c2.getTime());
                     }
                     if(course.getSemester().equals("")){
-                        c2.setSemester(course.getSemester());
+                        course.setSemester(c2.getSemester());
                     }
                     if(course.getInstructor().equals("")){
-                        c2.setInstructor(course.getInstructor());
+                        course.setInstructor(c2.getInstructor());
                     }
                     if(course.getStartDate()==null){
-                        c2.setStartDate(course.getStartDate());
+                        course.setStartDate(c2.getStartDate());
                     }
                     if(course.getEndDate()==null){
-                        c2.setEndDate(course.getEndDate());
+                        course.setEndDate(c2.getEndDate());
                     }
 
                     if(course.getClassroom().equals("")){
-                        c2.setClassroom(course.getClassroom());
+                        course.setClassroom(c2.getClassroom());
                     }
+                    memoryObjects.set(i, course);
+                    return course;
                 }
-                return c2;}
+            }
         }
         return course;
     }
@@ -213,11 +215,8 @@ public class InheritanceMapper {
                 Student s2= (Student) memoryObjects.get(i);
                 if (p.getPersonalID() == s2.getPersonalID()) {
                     Student s1 = (Student) p;
-                    System.out.println(s1);
-                    System.out.println(s2);
                     s1 = (Student) updatePersonVars(s1, s2);
                     memoryObjects.set(i, s1);
-                    System.out.println(memoryObjects.get(i));
                     return s1;
                 }
             }
