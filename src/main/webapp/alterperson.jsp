@@ -144,7 +144,7 @@
         <div class="content-section">
             <div class="content-section">
 
-                <button class="btn center-box" style="margin-outside: 20px" onclick="window.location.href='adminsite.jsp';">
+                <button class="btn center-box " onclick="window.location.href='adminsite.jsp';">
                     Cancel
                 </button>
 
