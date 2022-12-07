@@ -312,15 +312,6 @@ public class InheritanceMapper {
                 p.setPostalCode(p2.getPostalCode());
             }
 
-//                if(!p.getPassword().equals("")){
-//                    p.setPassword(p2.getPassword());
-//                }
-
-//                if(p.getContactDetails()!=p2.getContactDetails()){
-//                    p.setContactDetails(p2.getContactDetails());
-//
-//                }
-
             if(p.getDateOfBirth()==null){
                 p.setDateOfBirth(p2.getDateOfBirth());
             }
@@ -344,6 +335,7 @@ public class InheritanceMapper {
                     System.out.println("Calling delete");
                     this.PM.delete(p);
                     memoryObjects.remove(i);
+                }
             }
         }
     }
