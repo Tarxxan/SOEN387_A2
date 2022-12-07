@@ -339,7 +339,11 @@ public class InheritanceMapper {
                 }
             }
             else if(memoryObjects.get(i) instanceof Employee){
-                System.out.println("Instance of employee");
+                Person p2 = (Person) memoryObjects.get(i);
+                if (p2.getPersonalID()==p.getPersonalID()) {
+                    System.out.println("Calling delete");
+                    this.PM.delete(p);
+                    memoryObjects.remove(i);
             }
         }
     }
