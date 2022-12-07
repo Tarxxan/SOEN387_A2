@@ -56,7 +56,7 @@ public class DeletePersonServlet extends HttpServlet {
         }
         finally {
             session.setAttribute("Inheritance Mapper",im);
-            response.sendRedirect(request.getContextPath()+"/updatePerson.jsp");
+            response.sendRedirect(request.getContextPath()+"/alterperson.jsp");
 
         }
     }

@@ -100,7 +100,7 @@ public class UpdatePersonServlet extends HttpServlet {
             throw new RuntimeException(ex);
         } finally {
             session.setAttribute("Inheritance Mapper", im);
-            response.sendRedirect(request.getContextPath() + "/updatePerson.jsp");
+            response.sendRedirect(request.getContextPath() + "/alterperson.jsp");
         }
     }
 }

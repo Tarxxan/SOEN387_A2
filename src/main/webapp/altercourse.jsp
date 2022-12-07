@@ -29,7 +29,7 @@
         <a href="newstudent.jsp">New student</a>
         <a href="newcourse.jsp">New course</a>
         <a class="active" href="altercourse.jsp">Modify course</a>
-        <a href="updatePerson.jsp">Modify Person Info</a>
+        <a href="alterperson.jsp">Modify Person Info</a>
 
     </div>
 
@@ -116,7 +116,7 @@
 
                         <div class="form-group">
 
-                            <label for="dcdropdown" class="center-box">Delete Course</label>
+                            <label for="dcdropdown" class="center-box ">Delete Course</label>
                             <select id="dcdropdown" name="dcdropdown">
                                 <%= DisplayHelper.displayAllCourses()%>
 
@@ -125,10 +125,10 @@
                             </select>
                         </div>
                     </div>
+                    <div class="content-section">
 
-                    <input class="btn center-box" style="margin-bottom: 20px" name="dcdsubmit" type="submit"
-                           value="Delete Course">
-                    <br>
+                        <button class="btn center-box" name="dcdsubmit" type="submit">Delete Course</button>
+                    </div>
                 </div>
 
             </form>
@@ -136,7 +136,7 @@
 
         <div class="content-section">
 
-            <button class="btn center-box" style="margin-outside: 20px" onclick="window.location.href='adminsite.jsp';">
+            <button class="btn center-box" onclick="window.location.href='adminsite.jsp';">
                 Cancel
             </button>
 
@@ -147,7 +147,7 @@
     </div>
 
 </div>
-<script src="settings/newcourse.js" type="text/javascript"></script>
+<script src="settings/altercourse.js" type="text/javascript"></script>
 </body>
 
 </html>
