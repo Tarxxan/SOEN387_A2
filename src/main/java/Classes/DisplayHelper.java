@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class DisplayHelper {
 
     public static HashMap<String,Integer> idMap= new HashMap();
-    private int id;
+    private final int id;
     public DisplayHelper(int id) {
         this.id=id;
     }
@@ -23,18 +23,31 @@ public class DisplayHelper {
         return personDropdown;
     }
 
-    public String displayAvailableCoursesDropdown() throws SQLException {
+    public String displayCoursesList() throws SQLException {
         String courseDropdown ="";
         EnrollmentMapper em = new EnrollmentMapper();
-        ResultSet rs = em.getAvailableCourses(this.id);
+        ResultSet rs = em.getCourseListOptions();
 
         while(rs.next()){
-//            int id= rs.getInt("ID_courses");
-            String course=rs.getString("courseIdentifier");
+          int id= rs.getInt("ID_courses");
+          String course=rs.getString("courseIdentifier");
 //            idMap.put(course,id);
-            courseDropdown+="<option value='"+course+"'>"+course+"</option>";
+            courseDropdown+="<option value='"+id+"'>"+course+"</option>";
         }
         return courseDropdown;
+    }
+
+    public String displayStudentsList() throws SQLException {
+        String courseReport = "";
+        EnrollmentMapper em = new EnrollmentMapper();
+        ResultSet rs = em.getStudentsListOptions();
+        while(rs.next()){
+            int stuId = rs.getInt("ID_student");
+            String stuIdentifier =rs.getString("studentIdentifier");
+            courseReport+="<option value='"+stuId+"'>"+stuId+" "+stuIdentifier+"</option>";
+        }
+
+        return courseReport;
     }
 
     public String displayDropableCourses() throws SQLException {
@@ -65,18 +78,6 @@ public class DisplayHelper {
         courses+="</table>";
         return courses;
     }
-    public String displayReportCourses() throws SQLException {
-        String courseReport = "";
-        EnrollmentMapper em = new EnrollmentMapper();
-        ResultSet rs = em.getStudentsDropdown();
-        while(rs.next()){
-            String stuId = rs.getString("ID_student");
-            String stuIdentifier =rs.getString("studentIdentifier");
-            courseReport+="<option value='"+stuId+"'>"+stuId+" "+stuIdentifier+"</option>";
-        }
-
-        return courseReport;
-    }
 
     public static String displayAllCourses() throws SQLException {
         String courseDropdown="";
@@ -86,11 +87,21 @@ public class DisplayHelper {
         while(rs.next()){
             String courseIdentifier=rs.getString("courseIdentifier");
             int id=rs.getInt("ID_courses");
-            String course=rs.getString("courseCode");
-            idMap.put(course,id);
-            courseDropdown+="<option value='"+course+"'>"+course+"</option>";
+           idMap.put(courseIdentifier,id);
+            courseDropdown+="<option value='"+id+"'>"+courseIdentifier+"</option>";
         }
         return courseDropdown;
     }
 
+    public String coursesAvailableToEnroll() throws SQLException {
+        String enrollableCourses = "";
+        EnrollmentMapper em = new EnrollmentMapper();
+        ResultSet rs = em.getAvailableCourses(this.id);
+        while (rs.next()) {
+            String course = rs.getString("identifier");
+            enrollableCourses += "<option value='" + course + "'>" + course + "</option>";
+        }
+
+        return enrollableCourses;
+    }
 }

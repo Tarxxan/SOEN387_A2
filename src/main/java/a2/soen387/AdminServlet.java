@@ -1,16 +1,16 @@
 package a2.soen387;
 
 import Classes.EnrollmentMapper;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import javax.xml.transform.Result;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Map;
 
 @WebServlet("/AdminServlet")
 public class AdminServlet extends HttpServlet {
@@ -24,14 +24,19 @@ public class AdminServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        response.setContentType("text/html");
         PrintWriter output = response.getWriter();
         EnrollmentMapper em = new EnrollmentMapper();
 
         if (request.getParameter("rcsubmit") != null) {
             try {
-                ResultSet rs = em.findById(Integer.parseInt(request.getParameter("courseToDisplay")));
-                output.println("<table><tr><th>Course</th>");
+              output.println("<html><body>");
+                output.println("<h3 class=\"center-box\"> Courses Taken</h3>");
+              output.println("<table>");
+int id = Integer.parseInt(request.getParameter("studentSelected"));
+
+                ResultSet rs = em.getStudentCourseHistory(id);
+
                 while (rs.next()) {
                     output.println("<tr><td>");
                     output.print(rs.getString("identifier"));
@@ -41,26 +46,31 @@ public class AdminServlet extends HttpServlet {
                 throw new RuntimeException(e);
             } finally {
                 output.println("</table>");
+                output.print("</body></html>");
             }
         }
         else{
             try {
-                ResultSet rs = em.findbyCourse((request.getParameter("studentCourse")));
-                output.println("<table><tr><th>Student ID</th><th>Student Name</th>");
+                output.println("<html><body>");
+                output.println("<h3 class=\"center-box\"> Student ID    |   Student name</h3>");
+                int id = Integer.parseInt(request.getParameter("courseSelected"));
+
+                ResultSet rs = em.findbyCourse(id);
+
+                output.println("<table>");
                 while (rs.next()) {
                     output.println("<tr><td>");
                     output.print(rs.getString("ID_student"));
                     output.print("<td>"+rs.getString("studentIdentifier"));
                     output.println("</td></tr>");
                 }
+
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             } finally {
                 output.println("</table>");
+                output.print("</body></html>");
             }
         }
     }
 }
-
-
-

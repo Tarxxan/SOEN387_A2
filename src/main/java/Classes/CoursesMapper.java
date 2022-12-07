@@ -9,7 +9,7 @@ public class CoursesMapper {
     private final String updateSQL = "call updateCourse(?,?,?,?,?,?,?,?,?,?);";
     private final String deleteSQL = "call deleteCourse(?);";
     public CoursesMapper() {
-        if(this.conn==null)
+        if(conn==null)
             conn=DBConnection.getConnection();
     }
 
@@ -22,7 +22,7 @@ public class CoursesMapper {
     }
 
     private PreparedStatement setStmt(CallableStatement stmt, Courses c) throws SQLException {
-      //TODO:  Adjust for parametters (inid , incourseCode,intitle ,insemester, indays,intime,ininstructor,inclassroom,instartDate ,inendDate)
+
         stmt.setString(1,c.getCourseCode());
         stmt.setString(2,c.getTitle());
         stmt.setString(3,c.getSemester());
@@ -32,22 +32,22 @@ public class CoursesMapper {
         stmt.setString(7,c.getClassroom());
         stmt.setDate(8,c.getStartDate());
         stmt.setDate(9,c.getEndDate());
-//        stmt.setString(10, c.getCourseIdentifier());
+
         return stmt;
     }
 
     public void delete(Courses course) throws SQLException {
         CallableStatement stmt = conn.prepareCall(deleteSQL);
         stmt.setInt(1,course.getPkid());
-//        this.setStmt(stmt,course);
+        //this.setStmt(stmt,course);
         // Should Work
         System.out.println("Should Work");
-//        stmt.executeUpdate();
+        stmt.executeUpdate();
         }
         
 
     public ResultSet getAllCourses() throws SQLException {
-        String Courses="select * from courses";
+        String Courses="select * from courses;";
         Statement stmt = conn.createStatement();
         return stmt.executeQuery(Courses);
     }
@@ -66,8 +66,8 @@ public class CoursesMapper {
         stmt.setString(4,c.getSemester());
         stmt.setString(5,c.getDays());
         stmt.setString(6,c.getTime());
-        stmt.setString(7,c.getInstructor());
-        stmt.setString(8,c.getClassroom());
+        stmt.setString(7,c.getClassroom());
+        stmt.setString(8,c.getInstructor());
         stmt.setDate(9,c.getStartDate());
         stmt.setDate(10,c.getEndDate());
         return stmt;

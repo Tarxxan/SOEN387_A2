@@ -7,20 +7,26 @@ import java.sql.*;
 public class EnrollmentMapper {
     private final String  enroll= " INSERT ignore into enrollment(student, identifier, course)" + "select ID_student," +
             "courseIdentifier," + " ID_courses FROM  student s inner join courses c on  s.ID_student = ? where c.courseIdentifier = ?;";
-    private final String findId="Select identifier FROM enrollment where student=?";
-    private final String findCourse="Select studentIdentifier, ID_student FROM enrollment left join student s on enrollment.student = s.ID_student where identifier=? ";
+    private final String findId="call studentCourseHistory(?);";
+    private final String findCourse="Select studentIdentifier, ID_student FROM enrollment left join student s on enrollment.student = s.ID_student where course=?;";
     private final String drop = "DELETE from enrollment e  WHERE e.student = ? and e.identifier =?";
     public EnrollmentMapper() {
     }
-    public ResultSet getCourseReportDropdown() throws SQLException {
+    public ResultSet getCourseListOptions() throws SQLException {
         String sql = "{call courseReportDropdown()}";
         Connection conn = DBConnection.getConnection();
         CallableStatement stmt = conn.prepareCall(sql);
         return stmt.executeQuery();
     }
 
+    public ResultSet getStudentsListOptions() throws SQLException {
+        Connection conn = DBConnection.getConnection();
+        CallableStatement stmt = conn.prepareCall("{Call studentReportDropdown()}");
+        return stmt.executeQuery();
+    }
+
 //provides only courses where the student is not already enrolled, are in the past or the enrollment date is past. For a list of all the courses ever taken by the student use studentCourseHistory()
-    public ResultSet getAvailableCourses(int id) throws SQLException {
+  public ResultSet getAvailableCourses(int id) throws SQLException {
         String sql = "{call courseOfferingForthisStudent(?)}";
         Connection conn = DBConnection.getConnection();
         CallableStatement stmt = conn.prepareCall(sql);
@@ -78,10 +84,13 @@ public class EnrollmentMapper {
         stmt.setString(2, enrollment.getCourseCode());
         stmt.executeUpdate();}
     }
-//provides identifier and ID_student
-    public ResultSet getStudentsDropdown() throws SQLException {
+
+
+    public ResultSet getStudentCourseHistory(int id) throws SQLException {
+        String sql = "{call studentCourseHistory(?)}";
         Connection conn = DBConnection.getConnection();
-        CallableStatement stmt = conn.prepareCall("{Call studentReportDropdown()}");
+        CallableStatement stmt = conn.prepareCall(sql);
+        stmt.setInt(1,id);
         return stmt.executeQuery();
     }
 
@@ -93,10 +102,10 @@ public class EnrollmentMapper {
         return stmt.executeQuery();
     }
 
-    public ResultSet findbyCourse(String studentCourse) throws SQLException {
+    public ResultSet findbyCourse(int id_selectedCourse) throws SQLException {
         Connection conn = DBConnection.getConnection();
         PreparedStatement stmt = conn.prepareStatement(findCourse);
-        stmt.setString(1,studentCourse);
+        stmt.setInt(1,id_selectedCourse);
         return stmt.executeQuery();
     }
 

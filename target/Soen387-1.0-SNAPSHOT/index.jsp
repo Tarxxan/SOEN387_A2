@@ -10,7 +10,7 @@
 
 </head>
 <body>
-
+<div class="page-container">
 <div class="header">
   <h1>Welcome&nbsp;to&nbsp;your&nbsp;school&nbsp;website</h1>
   <br>
@@ -19,7 +19,7 @@
 
 </div>
 
-<div class="content-wrapper ">
+<div class="content-wrapper w-container">
   <div class="row ">
 
 
@@ -86,6 +86,8 @@
     </div>
 
   </div>
+</div>
+
   <footer class="footer">
 
   </footer>

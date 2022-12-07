@@ -47,8 +47,8 @@
                             <label for="ucdropdown" class="center-box">Update Course</label>
                             <select id="ucdropdown" name="ucdropdown">
                                 <%= DisplayHelper.displayAllCourses()%>
-                                <%= session = request.getSession()%>
-                                <% session.setAttribute("Hashmap",DisplayHelper.idMap);%>
+<%--                                <%= session = request.getSession()%>--%>
+<%--                               <% session.setAttribute("Hashmap",DisplayHelper.idMap);%>--%>
                             </select>
                         </div>
 
@@ -126,7 +126,7 @@
                         </div>
                     </div>
 
-                    <input class="center-box" style="margin-bottom: 20px" name="dcdsubmit" type="submit"
+                    <input class="btn center-box" style="margin-bottom: 20px" name="dcdsubmit" type="submit"
                            value="Delete Course">
                     <br>
                 </div>

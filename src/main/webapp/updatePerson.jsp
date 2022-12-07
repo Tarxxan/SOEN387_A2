@@ -59,15 +59,6 @@
                             </select>
                         </div>
 
-<%--                            &lt;%&ndash; Make the drop down menu to pick a student to modify  &ndash;%&gt;--%>
-<%--                            <div class="form-group" style="width: 100%">--%>
-<%--                                <label for="updropdown2" class="center-box">Update Student Information</label>--%>
-<%--                                <select id="updropdown2" name="updropdown2">--%>
-<%--                                    <%= DisplayHelper.displayAllCourses()%>--%>
-<%--                                   --%>
-<%--                                </select>--%>
-<%--                            </div>--%>
-
                         </div>
                     </div>
 
@@ -164,6 +155,7 @@
         </div>
 
     </div>
+
     <div class="content-section">
         <form action=<%= request.getContextPath() %>/DeletePersonServlet method="post" name="dpdform"
               onsubmit="return validatencformForm()" target="_self">
@@ -180,7 +172,7 @@
                     </div>
                 </div>
 
-                <input class="center-box" style="margin-bottom: 20px" name="dpdsubmit" type="submit"
+                <input class="btn center-box" style="margin-bottom: 20px" name="dpdsubmit" type="submit"
                        value="Delete Person">
                 <br>
             </div>
