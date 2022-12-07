@@ -5,6 +5,7 @@
 <html dir="ltr" lang="en">
 <head>
   <meta charset="utf-8">
+
   <link href="settings/reset.css" rel="stylesheet">
   <link href="settings/styles.css" rel="stylesheet"/>
   <link href="settings/formsstyles.css" rel="stylesheet"/>
@@ -17,7 +18,6 @@
     <h2>Reports</h2>
     <h2>${name}</h2>
   </div>
-
   <div class="navbar">
     <a class="right" href="index.jsp" onclick="processLogout()">Logout</a>
     <a class="active" href="adminsite.jsp">Reports</a>
@@ -38,10 +38,10 @@
         <form method="POST" action="<%=request.getContextPath()%>/AdminServlet" target="myIframeAdmin">
           <div class="form-group">
 
-            <label for="addCourse" >Course&nbsp;participants</label>
-            <select id="addCourse" name="studentCourse">
+            <label for="reportCourseDropdown" >Course&nbsp;participants</label>
+            <select id="reportCourseDropdown" name="courseSelected">
               <% DisplayHelper dh= new DisplayHelper((int)session.getAttribute("id"));%>
-                <%= dh.displayAvailableCoursesDropdown()%>
+                <%= dh.displayCoursesList()%>
               </select>
 
 
@@ -55,9 +55,9 @@
       <div class="column ">
         <form method="POST" action="<%=request.getContextPath()%>/AdminServlet" target="myIframeAdmin">
           <div class="form-group">
-            <label for="studentCourse">Student&nbsp;course&nbsp;load</label>
-            <select id="studentCourse" name="courseToDisplay">
-                <%= dh.displayReportCourses()%>
+            <label for="reportStudentDropdown">Student&nbsp;course&nbsp;load</label>
+            <select id="reportStudentDropdown" name="studentSelected">
+                <%= dh.displayStudentsList()%>
             </select>
           </div>
           <input type="submit" name="rcsubmit" value="Courses taken by student"/>

@@ -61,12 +61,7 @@ function validatencformForm() {
         return false;
     }
 
-    const daysarray = ["Mon", "Tue", "Wed", "Thur","Fri","-"];
 
-    if(!daysarray.includes(days)) {
-        alert("Wrong day, try again");
-        return false;
-    }
     if(!time.match(timepattern)) {
         alert("Wrong time format, try again");
         return false;
@@ -86,7 +81,7 @@ function validatencformForm() {
         return false;
     }
     if(!instructor.match(namespattern)) {
-        alert(" Not a name, try again");
+        alert("Not a name, try again");
         return false;
     }
     if(!room.match(roompattern)) {alert("Not a room, try again");

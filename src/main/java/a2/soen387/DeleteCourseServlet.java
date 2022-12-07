@@ -2,13 +2,15 @@ package a2.soen387;
 
 import Classes.Courses;
 import Classes.InheritanceMapper;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.HashMap;
 
 @WebServlet("/DeleteCourseServlet")
 public class DeleteCourseServlet extends HttpServlet {
@@ -20,12 +22,12 @@ public class DeleteCourseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         InheritanceMapper im = (InheritanceMapper) session.getAttribute("Inheritance Mapper");
-        String courseCode = request.getParameter("dcdropdown");
-        HashMap hash = (HashMap) session.getAttribute("Hashmap") ;
+        int id = Integer.parseInt(request.getParameter("dcdropdown"));
+       // HashMap hash = (HashMap) session.getAttribute("Hashmap") ;
 
         Courses course = new Courses();
-        course.setCourseCode(courseCode);
-        course.setPkid((int) hash.get(courseCode));
+        course.setPkid(id);
+      //  course.setPkid((int) hash.get(courseCode));
         try {
             if (im.inMapperCourse(course)) {
                 im.deleteCourse(course);

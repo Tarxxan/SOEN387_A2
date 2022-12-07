@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="10" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="SOEN387:war exploded" />
@@ -10,10 +13,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08d29141-7143-4bb3-b7b5-16901ce62cbc" name="Changes" comment="Modify person page is add, need to call procedure for dropdown menu">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/updatePerson.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/updatePerson.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/CoursesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/CoursesMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/DisplayHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/DisplayHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/EnrollmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/EnrollmentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/InheritanceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/InheritanceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/AdminServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/DeleteCourseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/DeleteCourseServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/UpdateCoursesServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/UpdateCoursesServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminsite.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminsite.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/altercourse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/altercourse.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/registrationform.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registrationform.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/altercourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/altercourse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/newcourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/newcourse.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/updatePerson.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updatePerson.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +62,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -72,34 +90,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/XAMPP/tomcat/webapps/SOEN387_A2/src/main/webapp/settings&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;StringManipulation&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/XAMPP/tomcat/webapps/SOEN387_A2/src/main/webapp/settings",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "StringManipulation"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;module&quot;,
-      &quot;directory&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "module",
+      "directory"
     ],
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\XAMPP\tomcat\webapps\SOEN387_A2\src\main\webapp\settings" />
@@ -114,8 +133,10 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="18">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="SOEN387:war exploded">
           <settings>
@@ -314,14 +335,27 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/newemployee.jsp</url>
-          <line>50</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.NumberFormatException" memberName="detailMessage" />
+        <PinnedItemInfo parentTag="java.lang.NumberFormatException" memberName="cause" />
+        <PinnedItemInfo parentTag="org.apache.catalina.connector.OutputBuffer" memberName="cb" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="((NumberFormatException)((NumberFormatException)((NumberFormatException)throwable).cause).cause).stackTrace[2]" language="JAVA" custom="java.lang.NumberFormatException" />
+        <watch expression="response" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

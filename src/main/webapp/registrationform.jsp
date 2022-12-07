@@ -32,7 +32,7 @@
             <label for="addCourse" class="center-box">Enroll</label>
             <select id="addCourse" name="addCourse">
             <% DisplayHelper dh= new DisplayHelper((int)session.getAttribute("id"));%>
-            <%= dh.displayAvailableCoursesDropdown()%>
+            <%= dh.coursesAvailableToEnroll()%>
             </select>
           </div>
 

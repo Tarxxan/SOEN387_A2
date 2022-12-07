@@ -29,7 +29,7 @@ public class InheritanceMapper {
                     e.setPostalCode(rs.getString("postalCode"));
                     e.setStreetNumber(rs.getString("streetNumber"));
                     e.setEmail(rs.getString("email"));
-                    e.setPhoneNumber(rs.getString("phonenumber"));
+                    e.setPhoneNumber(rs.getString("phoneNumber"));
                     e.setAppartmentNumber(rs.getString("appartmentNumber"));
                     e.setStreetName(rs.getString("streetName"));
                     e.setCity(rs.getString("city"));
@@ -52,7 +52,7 @@ public class InheritanceMapper {
                     s.setPostalCode(rs.getString("postalCode"));
                     s.setStreetNumber(rs.getString("streetNumber"));
                     s.setEmail(rs.getString("email"));
-                    s.setPhoneNumber(rs.getString("phonenumber"));
+                    s.setPhoneNumber(rs.getString("phoneNumber"));
                     s.setAppartmentNumber(rs.getString("appartmentNumber"));
                     s.setStreetName(rs.getString("streetName"));
                     s.setCity(rs.getString("city"));
@@ -63,19 +63,21 @@ public class InheritanceMapper {
                 }
             }
             this.memoryObjects.add(s);
-        } else if (O instanceof Courses) {
+        }
+       else if (O instanceof Courses) {
             Courses c = (Courses) O;
             ResultSet rs=this.CM.getAllCourses();
             while(rs.next()){
-                if(rs.getString("courseCode").equals(c.getCourseCode())){
+                if( rs.getInt("ID_courses") == (c.getPkid())){
+                    c.setCourseCode(rs.getString("courseCode"));
                     c.setTitle(rs.getString("title"));
                     c.setSemester(rs.getString("semester"));
                     c.setDays(rs.getString("daysScheduled"));
-                    c.setClassroom(rs.getString("classroom"));
                     c.setTime(rs.getString("timeScheduled"));
+                    c.setClassroom(rs.getString("classroom"));
+                    c.setInstructor(rs.getString("instructor"));
                     c.setStartDate(rs.getDate("startDate"));
                     c.setEndDate(rs.getDate("endDate"));
-                    c.setInstructor(rs.getString("instructor"));
                     c.setCourseIdentifier(rs.getString("courseIdentifier"));
                     break;
                 }
@@ -134,7 +136,7 @@ public class InheritanceMapper {
         for (int i = 0; i < memoryObjects.size(); i++) {
             if (memoryObjects.get(i) instanceof Courses) {
                 Courses c2 = (Courses) memoryObjects.get(i);
-                if (c.getCourseCode().equals(c2.getCourseCode())) {
+                if (c.getPkid()==(c2.getPkid())) {
                     return true;
                 }
             }
@@ -146,7 +148,7 @@ public class InheritanceMapper {
         for (int i = 0; i < memoryObjects.size(); i++) {
             if (memoryObjects.get(i) instanceof Courses) {
                 Courses c2 = (Courses) memoryObjects.get(i);
-                if (course.getCourseCode().equals(c2.getCourseCode())) {
+                if (course.getPkid()==(c2.getPkid())) {
                     memoryObjects.set(i, course);
                     this.CM.updateCourse(course);
                 }
@@ -165,12 +167,12 @@ public class InheritanceMapper {
             }
         }
     }
-//TODO: Solved the date issue, you can default to null if you do not want to update this information.Validate the procedure and confirm that it is what you need.
+
     public Courses updateMemCourse(Courses course) {
         for (int i = 0; i < memoryObjects.size(); i++) {
             if (memoryObjects.get(i) instanceof Courses) {
                 Courses c2 = (Courses) memoryObjects.get(i);
-                if (course.getCourseCode().equals(c2.getCourseCode())) {
+                if (course.getPkid()==(c2.getPkid())) {
 
                     if(course.getDays().equals("")){
                         c2.setDays(course.getDays());
@@ -249,7 +251,6 @@ public class InheritanceMapper {
             return false;
         }
 
-//TODO: Validate if the update procedures for person are useful or if you want them combined as one. They all detect if student or employee inside the procedure.
     public void updatePerson(Person p) throws SQLException {
         Employee e=null;
         Student s=null;

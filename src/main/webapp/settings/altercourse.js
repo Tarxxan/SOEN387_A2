@@ -26,12 +26,7 @@ function validatencformForm() {
         return false;
     }
 
-    const daysarray = ["Mon", "Tue", "Wed", "Thur","Fri","-"];
 
-    if(!daysarray.includes(days)) {
-        alert("Wrong day, try again");
-        return false;
-    }
     if(!time.match(timepattern)) {
         alert("Wrong time format, try again");
         return false;
