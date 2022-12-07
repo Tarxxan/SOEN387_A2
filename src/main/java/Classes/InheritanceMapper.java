@@ -202,83 +202,31 @@ public class InheritanceMapper {
     }
 
     public Person updateMemPerson(Person p) {
-        Person p2 = null;
-//        Employee e,e2= null;
-//        Student s,s2=null;
 
         for (int i = 0; i < memoryObjects.size(); i++) {
-            if (memoryObjects.get(i) instanceof Student || memoryObjects.get(i) instanceof Employee) {
-//                s2 = (Student) memoryObjects.get(i);
-//                s = (Student) p;
-//            }
-//            else if(memoryObjects.get(i) instanceof Employee) {
-//                e2 = (Employee) memoryObjects.get(i);
-//                e = (Employee) p;
-//            }
-                p= (Person) memoryObjects.get(i);
+            System.out.println(memoryObjects.get(i) instanceof Student);
+            if (memoryObjects.get(i) instanceof Student){
+                Student s2= (Student) memoryObjects.get(i);
+                Student s1 = (Student) p;
+
+                if (s1.getPersonalID() == s2.getPersonalID()) {
+                    s1 = (Student) updatePersonVars(s1, s2);
+                    memoryObjects.set(i, s1);
+                    return s1;
+                }
+
             }
-            if (p.getPersonalID() == p2.getPersonalID()) {
+            else if(memoryObjects.get(i) instanceof Employee) {
+             Employee e1 = (Employee) p;
+             Employee e2= (Employee) memoryObjects.get(i);
 
-                if(!p.getLastName().equals("")){
-                    p.setLastName(p2.getLastName());
-                }
-
-                if(!p.getFirstName().equals("")){
-                    p.setFirstName(p2.getFirstName());
-                }
-
-                if(!p.getCity().equals("")){
-                    p.setCity(p2.getCity());
-                }
-
-                if(!p.getCountry().equals("")){
-                    p.setCountry(p2.getCountry());
-                }
-
-                if(!p.getAppartmentNumber().equals("")){
-                    p.setAppartmentNumber(p2.getAppartmentNumber());
-                }
-
-                if(!p.getEmail().equals("")){
-                    p.setEmail(p2.getEmail());
-                }
-
-                if(p.getIsStudent()!= p2.getIsStudent()){
-                   p.setIsStudent(p2.getIsStudent());
-                }
-
-                if(!p.getPhoneNumber().equals("")){
-                    p.setPhoneNumber(p2.getPhoneNumber());
-                }
-
-                if(!p.getStreetName().equals("")){
-                    p.setStreetName(p2.getStreetName());
-                }
-
-                if(!p.getStreetNumber().equals("")) {
-                    p.setStreetNumber(p.getStreetNumber());
-                }
-
-                if(!p.getPostalCode().equals("")){
-                    p.setPostalCode(p2.getPostalCode());
-                }
-
-                if(!p.getPassword().equals("")){
-                    p.setPassword(p2.getPassword());
-                }
-
-                if(p.getContactDetails()!=p2.getContactDetails()){
-                    p.setContactDetails(p2.getContactDetails());
-
-                }
-
-                if(!p.getDateOfBirth().equals(p2.getDateOfBirth())){
-                    p.setDateOfBirth(p2.getDateOfBirth());
-                }
-            }
-        }
-            return p;
-    }
+            if (e1.getPersonalID() == e2.getPersonalID()) {
+                e1 = (Employee) updatePersonVars(e1, e2);
+                memoryObjects.set(i, e1);
+                return e1;
+            }}
+     }
+        return p; }
     public Boolean inMapperPerson(Person p) {
             if(memoryObjects==null){
                 return false;
@@ -292,14 +240,7 @@ public class InheritanceMapper {
                         }
                     }
                 }
-//                    }
-//                    else if (memoryObjects.get(i) instanceof Employee){
-//                        Employee e2 = (Employee) memoryObjects.get(i);
-//                        if (p.getPersonalID()==e2.getPersonalID()) {
-//                            return true;
-//                        }
-//                    }
-//                }
+//
             return false;
         }
 
@@ -316,17 +257,82 @@ public class InheritanceMapper {
 
         for (int i = 0; i < memoryObjects.size(); i++) {
             if (memoryObjects.get(i) instanceof Student && ((Student) memoryObjects.get(i)).getPersonalID()==s.getPersonalID()) {
-                System.out.println(p);
+                s= (Student) memoryObjects.get(i);
                 memoryObjects.set(i, s);
                 this.PM.updatePerson(s);
                 }
             else if(memoryObjects.get(i) instanceof Employee && ((Employee) memoryObjects.get(i)).getPersonalID()==e.getPersonalID()){
+                e= (Employee) memoryObjects.get(i);
+                System.out.println(e);
                 memoryObjects.set(i, e);
                 this.PM.updatePerson(e);
             }
 
         }
     }
+
+   public Person updatePersonVars(Person p,Person p2 ){
+        if (p.getPersonalID() == p2.getPersonalID()) {
+
+            if(!p.getLastName().equals("")){
+                p.setLastName(p2.getLastName());
+            }
+
+            if(!p.getFirstName().equals("")){
+                p.setFirstName(p2.getFirstName());
+            }
+
+            if(!p.getCity().equals("")){
+                p.setCity(p2.getCity());
+            }
+
+            if(!p.getCountry().equals("")){
+                p.setCountry(p2.getCountry());
+            }
+
+            if(!p.getAppartmentNumber().equals("")){
+                p.setAppartmentNumber(p2.getAppartmentNumber());
+            }
+
+            if(!p.getEmail().equals("")){
+                p.setEmail(p2.getEmail());
+            }
+
+            if(p.getIsStudent()!= p2.getIsStudent()){
+                p.setIsStudent(p2.getIsStudent());
+            }
+
+            if(p.getPhoneNumber()!=null){
+                p.setPhoneNumber(p2.getPhoneNumber());
+            }
+
+            if(!p.getStreetName().equals("")){
+                p.setStreetName(p2.getStreetName());
+            }
+
+            if(!p.getStreetNumber().equals("")) {
+                p.setStreetNumber(p.getStreetNumber());
+            }
+
+            if(!p.getPostalCode().equals("")){
+                p.setPostalCode(p2.getPostalCode());
+            }
+
+//                if(!p.getPassword().equals("")){
+//                    p.setPassword(p2.getPassword());
+//                }
+
+//                if(p.getContactDetails()!=p2.getContactDetails()){
+//                    p.setContactDetails(p2.getContactDetails());
+//
+//                }
+
+            if(p.getDateOfBirth()!=null){
+                p.setDateOfBirth(p2.getDateOfBirth());
+            }
+
+        }
+       return p;}
 
     public void deletePerson(Person p) throws SQLException {
         for (int i = 0; i < memoryObjects.size(); i++) {

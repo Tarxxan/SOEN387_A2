@@ -24,27 +24,38 @@ public class UpdatePersonServlet extends HttpServlet {
         Date setDateOfBirth = null;
         String firstName = request.getParameter("npname");
         String setLastName = request.getParameter("nplastname");
-        String setPhoneNumber = request.getParameter("npphone");
+        String setPhoneNumber=request.getParameter("npphone");
         String setEmail = request.getParameter("npemail");
-        if (request.getParameter("npdateofbirth").equals("")) {
-        } else {
+        if(!request.getParameter("npdateofbirth").equals("")){
             setDateOfBirth = Date.valueOf(request.getParameter("npdateofbirth"));
         }
-
         String setStreetName = request.getParameter("npstreetname");
         String setStreetNumber = request.getParameter("npestreetnumber");
         String setCity = request.getParameter("npcity");
         String setCountry = request.getParameter("npcountry");
-        String setAptNumber = request.getParameter("npappartmentnumber");
+        String setAptNumber = null;
+        if(request.getParameter("npappartmentnumber")==null || request.getParameter("npappartmentnumber").length()==0){
+            setAptNumber="";
+        }
+        else{
+            setAptNumber=request.getParameter("npappartmentnumber");
+        }
+
+//        if(request.getParameter("npphone")==null || request.getParameter("npphone").length()==0){
+//            setPhoneNumber="";
+//        }
+//        else{
+//            setPhoneNumber=request.getParameter("n")
+//        }
+
+
         String setPostalCode = request.getParameter("nppostalcode");
         String setPassword = request.getParameter("nppassword");
         int id = Integer.parseInt(request.getParameter("updropdown"));
+
         Employee e = null;
         Student s = null;
 
-        System.out.println(setAptNumber);
-        System.out.println(setPhoneNumber);
-        System.out.println(setStreetName);
         if (id > 89999999) {
             e= new Employee(setPassword,firstName,setLastName,setEmail,setPhoneNumber,setDateOfBirth,setStreetName,setAptNumber,setCountry,setPostalCode,setCity,setStreetNumber,false);
             e.setPersonalID(id);
@@ -72,7 +83,6 @@ public class UpdatePersonServlet extends HttpServlet {
                     im.updatePerson(s);
 
                 } else {
-                    // check course for logic on why we do this
                     im.memoryObjects.add(s);
                     im.updatePerson(s);
                     im.findObject(s);

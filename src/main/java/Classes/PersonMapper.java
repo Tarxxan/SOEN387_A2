@@ -84,7 +84,7 @@ public class PersonMapper {
 
     public void updatePerson(Person p) throws SQLException {
             // Calls three procs to update
-            //updateNameProc(p);
+            updateNameProc(p);
             updateContactProc(p);
             updateAddressProc(p);
         }
@@ -115,6 +115,7 @@ public class PersonMapper {
         stmt.setInt(1,p.getPersonalID());
         stmt.setString(2,p.getFirstName());
         stmt.setString(3,p.getLastName());
+        System.out.println(p.getDateOfBirth());
         stmt.setDate(4,p.getDateOfBirth());
         stmt.executeUpdate();
         stmt.close();
