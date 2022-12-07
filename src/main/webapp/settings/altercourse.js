@@ -15,10 +15,8 @@ function validatencformForm() {
     let room = document.forms["ucform"]["room"].value;
 
 
-    if(courseCode === "") {
-        alert("Course code cannot be blank, try again");
-        return false;
-    }
+
+/*
 
 
     if(!courseTitle.match(namespattern)) {
@@ -27,7 +25,8 @@ function validatencformForm() {
     }
 
 
-    if(!time.match(timepattern)) {
+    if(time!=null)
+        if(!time.match(timepattern)) {
         alert("Wrong time format, try again");
         return false;
     }
@@ -49,5 +48,6 @@ function validatencformForm() {
         alert(" Not a name, try again");
         return false;
     }
+*/
 
 }
