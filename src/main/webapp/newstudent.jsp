@@ -37,8 +37,8 @@
 
     <form action="<%=request.getContextPath()%>/NewStudentServlet" method="post" name="nsform" novalidate onsubmit="return validatensformForm()"
           target="_self">
-      <div class="card">
-        <div class="content-section">
+      <div class="row card">
+       <%-- <div class="content-section">--%>
           <label for="nsname" class="center-box">Add student</label>
           <div class="row ">
           <div class="col-50 ">

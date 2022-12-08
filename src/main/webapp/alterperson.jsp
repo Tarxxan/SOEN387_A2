@@ -91,15 +91,15 @@
                                 <input class="form-control" name="npstreetname" placeholder="Street name" type="text">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" name="nppostalcode" placeholder="postal Code" type="text">
-                            </div>
-                            <div class="form-group">
                                 <input class="form-control" name="npapartmentNum" placeholder="Apartment number" type="text">
                             </div>
 
                         </div>
 
                         <div class="col-75">
+                            <div class="form-group">
+                                <input class="form-control" name="nppostalcode" placeholder="postal Code" type="text">
+                            </div>
                             <div class="form-group">
                                 <input class="form-control" name="npcity" placeholder="City" type="text">
                             </div>

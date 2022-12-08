@@ -22,6 +22,7 @@
     <div class="header">
         <h1>Administrator site</h1>
         <h2>New&nbsp;administrator&nbsp;account</h2>
+
         <h2></h2>
     </div>
 
@@ -41,6 +42,7 @@
               novalidate onsubmit="return validateneformForm()" target="_self">
 
             <div class="row card">
+                <label  class="center-box">Add Employee </label><br>
                 <div class="column">
 
                     <div class="form-group">
@@ -51,40 +53,10 @@
                         <input class="form-control" name="nelastname" placeholder="Last Name" type="text">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" name="neestreetnumber"
-                               placeholder="Street number"
-                               type="text">
-                    </div>
-                    <div class="form-group">
-
-                        <input class="form-control" name="nsappartmentnumber" placeholder="Appartment number"
-                               type="text">
-
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" name="nestreetname" placeholder="Street name" type="text">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" name="necity" placeholder="City" type="text">
-                    </div>
-<%--                    <div class="form-group">--%>
-<%--                        <input class="form-control" name="neprovince" placeholder="Province" type="text">--%>
-<%--                    </div>--%>
-                    <div class="form-group">
-                        <input class="form-control" name="necountry" placeholder="Country"
-                               type="text">
+                        <input class="form-control" name="nedateofbirth" placeholder="Date of birth"
+                               type="date">
                     </div>
 
-
-                    <button class="btn center-box" onclick="window.location.href='adminsite.jsp';">Cancel
-                    </button>
-                </div>
-
-                <div class="column">
-                    <div class="form-group">
-                        <input class="form-control" name="nepostalcode"
-                               placeholder="Postal Code" type="text">
-                    </div>
                     <div class="form-group">
                         <input class="form-control" name="neemail" placeholder="Email" type="email">
                     </div>
@@ -92,10 +64,6 @@
                         <input class="form-control" name="nephone"
                                placeholder="Phone number"
                                type="tel">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" name="nedateofbirth" placeholder="Date of birth"
-                               type="date">
                     </div>
                     <div class="form-group">
                         <input class="form-control" name="nepassword"
@@ -114,12 +82,58 @@
                                type="password">
 
                     </div>
+
+
+<%--
+                    <button class="btn center-box" onclick="window.location.href='adminsite.jsp';">Cancel
+                    </button>--%>
+
+                </div>
+
+                <div class="column">
+                    <div class="form-group">
+                        <input class="form-control" name="neestreetnumber"
+                               placeholder="Street number"
+                               type="text">
+                    </div>
+                    <div class="form-group">
+
+                        <input class="form-control" name="nsappartmentnumber" placeholder="Appartment number"
+                               type="text">
+
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="nestreetname" placeholder="Street name" type="text">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="necity" placeholder="City" type="text">
+                    </div>
+                    <%--                    <div class="form-group">--%>
+                    <%--                        <input class="form-control" name="neprovince" placeholder="Province" type="text">--%>
+                    <%--                    </div>--%>
+                    <div class="form-group">
+                        <input class="form-control" name="necountry" placeholder="Country"
+                               type="text">
+                    </div>
+
+
+                    <div class="form-group">
+                        <input class="form-control" name="nepostalcode"
+                               placeholder="Postal Code" type="text">
+                    </div>
+
+
                     <input class="center-box" name="nesubmit" type="submit" value="Save">
 
                 </div>
             </div>
         </form>
 
+        <div class="content-section">
+            <button class="btn center-box" onclick="window.location.href='adminsite.jsp';">Cancel
+            </button>
+
+        </div>
         <footer class="footer">
 
         </footer>
