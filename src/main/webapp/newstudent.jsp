@@ -132,16 +132,17 @@
 
         <input class="center-box" name="nssubmit" type="submit" value="Save">
       </div>
-      </div>
+
 
     </form>
+      <div class="content-section">
+          <button class="btn center-box" onclick="window.location.href='adminsite.jsp';">Cancel
+          </button>
+
+      </div>
   </div>
 
-    <div class="content-section">
-    <button class="btn center-box" onclick="window.location.href='adminsite.jsp';">Cancel
-    </button>
 
-  </div>
     <footer class="footer">
 
     </footer>
