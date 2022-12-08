@@ -26,7 +26,7 @@ public class AddDropCourseServlet extends HttpServlet {
 
         if(request.getParameter("sdsubmit")!=null){
             try {
-                enrollment.setCourseIdentifier(request.getParameter("dropCourse"));
+                enrollment.setCourseID(Integer.parseInt(request.getParameter("dropCourse")));
                 em.dropCourses(enrollment);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
@@ -37,7 +37,7 @@ public class AddDropCourseServlet extends HttpServlet {
         }
         else {
             try {
-                enrollment.setCourseIdentifier(request.getParameter("addCourse"));
+                enrollment.setCourseID(Integer.parseInt(request.getParameter("addCourse")));
                 em.addCourses(enrollment);
             } catch (SQLException e) {
                 throw new RuntimeException(e);

@@ -5,11 +5,10 @@ package Classes;// Source code recreated from a .class file by IntelliJ IDEA
 import java.sql.*;
 
 public class EnrollmentMapper {
-    private final String  enroll= " INSERT ignore into enrollment(student, identifier, course)" + "select ID_student," +
-            "courseIdentifier," + " ID_courses FROM  student s inner join courses c on  s.ID_student = ? where c.courseIdentifier = ?;";
+    private final String  enroll= " call enroll(?,?)";
     private final String findId="call studentCourseHistory(?);";
     private final String findCourse="Select studentIdentifier, ID_student FROM enrollment left join student s on enrollment.student = s.ID_student where course=?;";
-    private final String drop = "DELETE from enrollment e  WHERE e.student = ? and e.identifier =?";
+    private final String drop = "call dropCourse(?,?);";
     public EnrollmentMapper() {
     }
     public ResultSet getCourseListOptions() throws SQLException {
@@ -55,9 +54,9 @@ public class EnrollmentMapper {
         Connection conn = DBConnection.getConnection();
         PreparedStatement stmt = conn.prepareStatement(drop);
         System.out.println(enrollment.getStudentID());
-        System.out.println(enrollment.getCourseCode());
+        System.out.println(enrollment.getCourseID());
         stmt.setInt(1,enrollment.getStudentID());
-        stmt.setString(2, enrollment.getCourseCode());
+        stmt.setInt(2, enrollment.getCourseID());
         stmt.executeUpdate();
 
     }
@@ -81,7 +80,7 @@ public class EnrollmentMapper {
         else{
         PreparedStatement stmt = conn.prepareStatement(enroll);
         stmt.setInt(1,enrollment.getStudentID());
-        stmt.setString(2, enrollment.getCourseCode());
+        stmt.setInt(2, enrollment.getCourseID());
         stmt.executeUpdate();}
     }
 
