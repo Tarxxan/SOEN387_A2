@@ -12,14 +12,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08d29141-7143-4bb3-b7b5-16901ce62cbc" name="Changes" comment="Modify person page is add, need to call procedure for dropdown menu">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="08d29141-7143-4bb3-b7b5-16901ce62cbc" name="Changes" comment="EnrollmentMapper queries into procedures and more details in the reports displayed.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b9b50d4-b60a-45d2-b531-ea25884a326d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/alterperson.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/alterperson.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/newemployee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newemployee.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/newstudent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newstudent.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Soen387-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/EnrollmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/EnrollmentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/a2/soen387/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/a2/soen387/AdminServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +117,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="openjdk-18">
+    <configuration name="Tomcat 10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="18">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
@@ -224,7 +222,7 @@
       <workItem from="1668872342169" duration="13896000" />
       <workItem from="1670203228073" duration="8455000" />
       <workItem from="1670445224788" duration="665000" />
-      <workItem from="1670454342926" duration="3034000" />
+      <workItem from="1670454342926" duration="5352000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure +working servlet and DB's lets get to implementing the function :)">
       <created>1668469319884</created>
@@ -317,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670430742115</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Changes to student site menus. It all works.">
+      <created>1670458092354</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1670458092354</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,7 +363,9 @@
     <MESSAGE value="Reports, New course and Modify course have been fixed and tested. The hash map has been commented. Dropdowns have been replaced by the right procedures.CourseCode references as identifiers have been replaced by ID_courses. All dependencies until this point are on point." />
     <MESSAGE value="All about layout and redirections for admin site except new employee." />
     <MESSAGE value="Commented altercourse.js to inspect later. Set somme arguments in the right order." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commented altercourse.js to inspect later. Set somme arguments in the right order." />
+    <MESSAGE value="Changes to student site menus. It all works." />
+    <MESSAGE value="EnrollmentMapper queries into procedures and more details in the reports displayed." />
+    <option name="LAST_COMMIT_MESSAGE" value="EnrollmentMapper queries into procedures and more details in the reports displayed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -61,7 +61,7 @@ int id = Integer.parseInt(request.getParameter("studentSelected"));
                 while (rs.next()) {
                     output.println("<tr><td>");
                     output.print(rs.getString("ID_student"));
-                    output.print("<td>"+rs.getString("studentIdentifier"));
+                    output.print("<td>"+rs.getString("studentIdentifier")+" | "+rs.getString("semester"));
                     output.println("</td></tr>");
                 }
 
