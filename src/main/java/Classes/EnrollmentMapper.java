@@ -7,7 +7,7 @@ import java.sql.*;
 public class EnrollmentMapper {
     private final String  enroll= " call enroll(?,?)";
     private final String findId="call studentCourseHistory(?);";
-    private final String findCourse="Select studentIdentifier, ID_student FROM enrollment left join student s on enrollment.student = s.ID_student where course=?;";
+    private final String findCourse="call findById(?);";
     private final String drop = "call dropCourse(?,?);";
     public EnrollmentMapper() {
     }
