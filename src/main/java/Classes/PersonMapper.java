@@ -85,7 +85,7 @@ public class PersonMapper {
     public void updatePerson(Person p) throws SQLException {
             // Calls three procs to update
             updateNameProc(p);
-            //updateContactProc(p);
+            updateContactProc(p);
             updateAddressProc(p);
         }
 

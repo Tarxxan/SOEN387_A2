@@ -148,7 +148,7 @@ public class InheritanceMapper {
         for (int i = 0; i < memoryObjects.size(); i++) {
             if (memoryObjects.get(i) instanceof Courses) {
                 Courses c2 = (Courses) memoryObjects.get(i);
-                if (course.getPkid()==(c2.getPkid())) {
+                if (course.getCourseCode()==(c2.getCourseCode())) {
                     memoryObjects.set(i, course);
                     this.CM.updateCourse(course);
                 }
@@ -160,7 +160,7 @@ public class InheritanceMapper {
         for (int i = 0; i < memoryObjects.size(); i++) {
             if (memoryObjects.get(i) instanceof Courses) {
                 Courses c2 = (Courses) memoryObjects.get(i);
-                if (course.equals(c2)) {
+                if (course.getCourseCode()==c2.getCourseCode()) {
                     this.CM.delete(c2);
                     memoryObjects.remove(i);
                 }
